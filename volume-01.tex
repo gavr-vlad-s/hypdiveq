@@ -10266,7 +10266,57 @@ $$
 \end{Proof}    
 
 	    \subsection{Нелинейное уравнение}
-	    
+Пусть $\varphi\in V$, $\psi\in H$, $f\in L_1([0,T],H)$, $\mathfrak{g}\in W^1_1([0,T], Y^*)$ --- фиксированы.
+
+Рассмотрим задачу Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:nonlinear}
+\ddot{\mathfrak{z}}(t)+\mathfrak{A}(t){\mathfrak{z}}(t)+\mathfrak{B}(t){\mathfrak{z}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{z}}(t) = \mathfrak{b}(t,\mathfrak{z}(t),\dot{\mathfrak{z}}(t)) + \mathfrak{C}^*\mathfrak{g}(t),\,\,\,t\in[0,T],\\
+\label{abstrChauchyprobinitcond:nonaut:nonlinear}
+{\mathfrak{z}}(0)=\varphi,\,\,\,\dot{\mathfrak{z}}(0)=\psi,
+\end{gather}
+где функция $\mathfrak{b}:[0,T]\times V\times H\to H$ такова, что
+\begin{enumerate}
+\item функция $[0,T]\ni t\mapsto\mathfrak{b}(t,v,h)$ --- сильно измерима при всех $v\in V$, $h\in H$;
+\item найдётся функция $\mathbf{K}_0\in L_1[0,T]$, такая, что
+\begin{gather*}
+\|\mathfrak{b}(t,v_1,h_1)-\mathfrak{b}(t,v_2,h_2)\|_H\leqslant \mathbf{K}_0(t)\sqrt{\|v_1-v_2\|^2_V+\|h_1-h_2\|^2_H}\,\,\,\forall\,(t,v_i,h_i)\in[0,T]\times V\times H,\,\,\,i=1,2;
+\end{gather*}
+\item найдётся функция $\mathbf{K}_1\in L_1([0,T],H)$, такая, что
+\begin{gather*}
+\|\mathfrak{b}(t,0,0)\|_H\leqslant\|\mathbf{K}_1(t)\|_H\,\,\,\forall\,t\in[0,T].
+\end{gather*}
+\end{enumerate}
+	
+Дадим следующее
+\begin{Definition}\label{SolutionDef1:nonaut:nonlinear} Функцию ${\mathfrak{z}}\in{\textrm{Э}}([0,T];V,H)$ назовём решением задачи Коши (\ref{abstrChauchyprobeq:nonaut:nonlinear}),
+(\ref{abstrChauchyprobinitcond:nonaut:nonlinear}), если
+\begin{gather}\label{defsolabstrChauchyprob1:nonaut:nonlinear}
+\int\limits_0^T[-\langle\dot{\mathfrak{z}}(t),\dot{\eta}(t)\rangle_H+\langle \mathfrak{A}(t){\mathfrak{z}}(t),\eta(t)\rangle+\langle \mathfrak{B}(t){\mathfrak{z}}(t),\eta(t)\rangle +\langle \mathfrak{F}(t)\mathfrak{G}{\mathfrak{z}}(t),\mathfrak{G}\eta(t)\rangle_Z]dt=\\
+=\notag\langle\psi,\eta(0)\rangle+\int\limits_0^T\langle \mathfrak{b}(t,\mathfrak{z}(t),\dot{\mathfrak{z}}(t)),\eta(t)\rangle_Hdt +\int\limits_0^T\langle{\mathfrak{g}}(t), \mathfrak{C}\eta(t)\rangle\,dt\,\,\,\forall\,{\eta}\in\hat{\textrm{Э}}{}([0,T];V,H);\\
+\notag \mathfrak{z}(0)=\varphi.
+\end{gather}
+\end{Definition}
+
+Дадим ещё одно определение решения задачи Коши  (\ref{abstrChauchyprobeq:nonaut:nonlinear}), (\ref{abstrChauchyprobinitcond:nonaut:nonlinear}).
+\begin{Definition}\label{SolutionDef2:nonaut:nonlinear} Функцию ${\mathfrak{z}}\in{\textrm{Э}}_2([0,T];V,H)$ назовём решением задачи Коши (\ref{abstrChauchyprobeq:nonaut:nonlinear}),
+(\ref{abstrChauchyprobinitcond:nonaut:nonlinear}), если
+\begin{gather}\label{defsolabstrChauchyprob2:nonaut:nonlinear}
+\langle\ddot{\mathfrak{z}}(t),v\rangle+\langle\mathfrak{A}(t){\mathfrak{z}}(t)+\mathfrak{B}(t){\mathfrak{z}}(t) +  \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{z}}(t), v\rangle=\\
+\notag=\langle \mathfrak{b}(t,\mathfrak{z}(t),\dot{\mathfrak{z}}(t)), v\rangle_H+\langle{\mathfrak{g}}(t), \mathfrak{C}\eta(t)\rangle\,\,\,\mbox{ при п.в. }t\in[0,T]\,\,\,\text{$\forall v\in V$,}\\
+\notag {\mathfrak{z}}(0)=\varphi,\,\,\,\dot{\mathfrak{z}}(0)=\psi.
+\end{gather}
+\end{Definition}	
+
+Эквивалентность этих двух определений доказывается аналогично тому, как доказывалась эквивалентность определений  \ref{SolutionDef1:nonaut} и \ref{SolutionDef2:nonaut}.    
+
+\begin{Theorem}\label{abstrChauchyprobeq:nonaut:nonlinear!theorem}
+Задача Коши  (\ref{abstrChauchyprobeq:nonaut:nonlinear}), (\ref{abstrChauchyprobinitcond:nonaut:nonlinear}) имеет единственное решение $\mathfrak{z}$ в классе ${\textrm{Э}}([0,T];V,H)$, это решение является элементом пространства $\textrm{Є}([0,T];V,H)$, и найдётся постоянная $\varkappa_4>0$, зависящая лишь от чисел $T$, $c_1$, $c_2$, $c_3>0$, от $\|\mathfrak{C}\|_{V\to Y}$,  $\|\mathfrak{G}\|_{V\to Z}$, и функции 
+$\mathbf{K}_0\in L_1[0,T]$, такая, что
+\begin{gather}\label{abstrChauchyprobeq:nonaut:a_priori_solution_estimate1:nonlinear}
+\|\mathfrak{z}\|_{{\textrm{Є}}([0,T];V,H)}\leqslant \varkappa_2[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|\mathfrak{b}(t,0,0)\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}].
+\end{gather}
+\end{Theorem}
+
 	    \subsection{Линейное уравнение с мерой Радона в правой части}
 	    
 	    \subsection{Параметрическая задача Коши с ненулевой правой частью}
