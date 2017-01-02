@@ -24,7 +24,7 @@
 \hoffset -25mm
 \voffset -30mm
 %\renewcommand{\baselinestretch}{1.347}
-\renewcommand{\No}{${\cal N}{\!}\underline{\circ}$}
+\newcommand{\No}{${\cal N}{\!}\underline{\circ}$}
 \righthyphenmin=2
 \hfuzz=12.5pt
 \makeatletter
@@ -6786,17 +6786,17 @@ E[v](t)=G(t)v\,\,\,\forall\,v\in V\,\,\forall\,t\in[0,T];\\
 2) Утверждение о том, что если функция $\Psi:[0,T]\to\mathcal{L}(H,V)$ обладает свойствами 1)--3), то оператор $A$, задаваемый соотношениями~\eqref{L.H->En2([0,T];V,H)!representations}, является линейным ограниченным оператором, действующим из $H$ в $\textrm{Є}([0,T];V,H)$, вытекает непосредственно из этих свойств.
 \end{Proof}
 
-Далее под $\mathfrak{R}([0,T]; V,H)$ будем понимать множество функций $\Psi:[0,T]\to\mathcal{L}(H,V)$, таких, что
+Далее под $\mathfrak{R}([0,T]; V,H)$ будем понимать множество функций $\Psi:[0,T]\to\mathcal{L}(V,V)$, таких, что
 
-1) при каждом фиксированном $h\in H$ отображение
+1) при каждом фиксированном $v\in V$ отображение
 \begin{gather*}
 [0,T]\ni t\mapsto[\Psi(t)v]\in V;
 \end{gather*}
-непрерывно в слабой топологии пространства $V$, принадлежит классу  $W^1_\infty([0,T],H)$,  и при всех $t\in[0,T]$ имеет место включение  $\Psi'(t)\in\mathcal{L}(H,H)$;
+непрерывно в слабой топологии пространства $V$, принадлежит классу  $W^1_\infty([0,T],H)$,  и при всех $t\in[0,T]$ имеет место включение  $\Psi'(t)\in\mathcal{L}(V,H)$;
 
-2) при каждом фиксированном $h\in H$ отображение
+2) при каждом фиксированном $v\in V$ отображение
 \begin{gather*}
-[0,T]\ni t\mapsto[\Psi'(t)h]\in H
+[0,T]\ni t\mapsto[\Psi'(t)v]\in H
 \end{gather*}
 непрерывно в слабой топологии пространства $H$.
 
@@ -6895,7 +6895,7 @@ A[h](\tau)=B(\tau)h,\,\,\,\forall\,h\in H,\,\,\,\tau\in[0,T];\\
 
 Положив теперь $\Psi(t,\tau)\equiv E(t;\tau)$, получим требуемое.
 
-2) Утверждение о том, что если функция $\Psi:\Gamma\to\mathcal{L}(H,V)$ обладает свойствами 1)--4), то оператор $A$,соотношениями~\eqref{L.H->C([0,T],En2([0,T];V,H))!representations}, является линейным ограниченным оператором, действующим из $H$ в $C([0,T],\textrm{Є}([0,T];V,H))$, вытекает непосредственно из этих свойств.
+2) Утверждение о том, что если функция $\Psi:\Gamma\to\mathcal{L}(H,V)$ обладает свойствами 1)--4), то оператор $A$, определённый соотношениями~\eqref{L.H->C([0,T],En2([0,T];V,H))!representations}, является линейным ограниченным оператором, действующим из $H$ в $C([0,T],\textrm{Є}([0,T];V,H))$, вытекает непосредственно из этих свойств.
 \end{Proof}
 
 Далее $\mathfrak{S}(\Gamma;V,H)$ будет обозначать множество функций $\Psi:\Gamma\to\mathcal{L}(H,V)$, таких, что
@@ -9974,37 +9974,6 @@ $\lim\limits_{N\to\infty} \|\eta^N-\eta\|_{\mathcal{W}^1_2([0,T];V,H)}=0$. Сл�
 Итак, оценка (\ref{abstrChauchyprobeq:nonaut:a_priori_solution_estimate1}) доказана, причём можно взять  $\varkappa_2=\varkappa_1$.
 \end{Proof}
 
-%Рассмотрим теперь вопрос о представлении решения задачи Коши (\ref{abstrChauchyprobeq:nonaut}), (\ref{abstrChauchyprobinitcond:nonaut}).
-%
-%Прежде всего определим гильбертово пространство $\mathfrak{V}$ как множество пар $\mathfrak{v}\equiv(v,h)\in V\times H$, наделённое скалярным произведением
-%$$
-%\langle(v_1,h_1),(v_2,h_2)\rangle_{\mathfrak{V}}\equiv\langle v_1,v_2\rangle_V+\langle h_1,h_2\rangle_H.
-%$$
-%Далее, введём банахово пространство $\mathfrak{W}$ как множество четвёрок $\mathfrak{w}\equiv(v,h,\mathfrak{f},{g})\in V\times H\times  L_1([0,T],H)\times W^1_1([0,T], Y^*)$,
-% наделённое нормой
-%$$
-%\|\mathfrak{w}\|_{\mathfrak{W}}\equiv\|(v,h)\|_{\mathfrak{V}}+\|\mathfrak{f}\|_{1,[0,T],H}+\|{g}\|^{(1)}_{1,[0,T],Y^*}.
-%$$
-%Наконец, через $\Lambda$ обозначим оператор, ставящий в соответствие каждой четвёрке $\mathfrak{w}\equiv(v,h,\mathfrak{f},{g})\in\mathfrak{W}$ решение задачи Коши (\ref{abstrChauchyprobeq:nonaut}), (\ref{abstrChauchyprobinitcond:nonaut}) с $\varphi=v$, $\psi=h$, $f=\mathfrak{f}$, $\mathfrak{g}=g$.
-%
-%Из теоремы \ref{unique_existence_theorem:nonaut..utochnenie} следует, что этот оператор принимает значения в пространстве $\textrm{Є}([0,T];V,H)$.
-%Кроме того, нетрудно видеть, что этот оператор линеен. Из теоремы \ref{unique_existence_theorem:nonaut..utochnenie} также следует, что оператор $\Lambda$ --- ограничен. 
-%
-%Таким образом, решение задачи Коши (\ref{abstrChauchyprobeq:nonaut}), (\ref{abstrChauchyprobinitcond:nonaut}) можно записать в виде 
-%\begin{gather*}
-%\mathfrak{z}(t)=\Lambda[\varphi,\psi,f,\mathfrak{g}](t),\,\,\,t\in[0,T].
-%\end{gather*}
-%Введём операторы $\Lambda_1:V\times H\times W^1_1([0,T], Y^*)\to \textrm{Є}([0,T];V,H)$ и $\Lambda_2:L_1([0,T],H)\to \textrm{Є}([0,T];V,H)$ по формулам
-%\begin{gather*}
-%\Lambda_1[v,h,g]\equiv\Lambda[v,h,0,g],\,\,\,\forall\,(v,h,g)\in V\times H\times W^1_1([0,T], Y^*);\,\,\,
-%\Lambda_2[\mathfrak{f}]\equiv\Lambda[0,0,\mathfrak{f}, 0]\,\,\,\forall\,\mathfrak{f}\in L_1([0,T],H).
-%\end{gather*}
-%Тогда решение задачи Коши (\ref{abstrChauchyprobeq:nonaut}), (\ref{abstrChauchyprobinitcond:nonaut}) можно записать в виде
-%\begin{gather*}
-%\mathfrak{z}(t)=\Lambda_1[\varphi,\psi,\mathfrak{g}](t)+\Lambda_2[f](t),\,\,\,t\in[0,T].
-%\end{gather*}
-
-
 	    \subsection{Параметрическая задача Коши для однородного уравнения}
 При каждом $\psi\in H$ определим функцию $\mathfrak{y}[\psi](t,\tau)$, $t\in[0,T]$, $\tau\in[0,T]$, при $t\in[0,\tau]$ как решение задачи Коши
 \begin{gather}\label{abstrChauchyprobeq:nonaut:parametric:homogenious.eq!t.less.than.tau}
@@ -10184,8 +10153,117 @@ H\ni h\mapsto \mathfrak{y}[h]\in C([0,T],{\textrm{Є}}([0,T];V,H))
 
 
 	    \subsection{Представление решения линейного уравнения} 
-В данном разделе мы получим представление решения задачи Коши (\ref{abstrChauchyprobeq:nonaut}), (\ref{abstrChauchyprobinitcond:nonaut}). А именно, покажем, что справедлива	    
-	    
+В данном разделе мы получим представление решения задачи Коши (\ref{abstrChauchyprobeq:nonaut}), (\ref{abstrChauchyprobinitcond:nonaut}). 
+
+Прежде всего определим гильбертово пространство $\mathfrak{V}$ как множество пар $\mathfrak{v}\equiv(v,h)\in V\times H$, наделённое скалярным произведением 
+$$
+\langle(v_1,h_1),(v_2,h_2)\rangle_{\mathfrak{V}}\equiv\langle v_1,v_2\rangle_V+\langle h_1,h_2\rangle_H.
+$$
+Далее, введём банахово пространство $\mathfrak{W}$ как множество четвёрок $\mathfrak{w}\equiv(v,h,\mathfrak{f},{g})\in V\times H\times  L_1([0,T],H)\times W^1_1([0,T], Y^*)$,
+ наделённое нормой
+$$
+\|\mathfrak{w}\|_{\mathfrak{W}}\equiv\|(v,h)\|_{\mathfrak{V}}+\|\mathfrak{f}\|_{1,[0,T],H}+\|{g}\|^{(1)}_{1,[0,T],Y^*}.
+$$
+Наконец, через $\Lambda$ обозначим оператор, ставящий в соответствие каждой четвёрке $\mathfrak{w}\equiv(v,h,\mathfrak{f},{g})\in\mathfrak{W}$ решение задачи Коши (\ref{abstrChauchyprobeq:nonaut}), (\ref{abstrChauchyprobinitcond:nonaut}) с $\varphi=v$, $\psi=h$, $f=\mathfrak{f}$, $\mathfrak{g}=g$.
+
+Из теоремы \ref{unique_existence_theorem:nonaut..utochnenie} следует, что этот оператор принимает значения в пространстве $\textrm{Є}([0,T];V,H)$.
+Кроме того, нетрудно видеть, что этот оператор линеен. Из теоремы \ref{unique_existence_theorem:nonaut..utochnenie} также следует, что оператор $\Lambda$ --- ограничен. 
+
+Таким образом, решение задачи Коши (\ref{abstrChauchyprobeq:nonaut}), (\ref{abstrChauchyprobinitcond:nonaut}) можно записать в виде 
+\begin{gather*}
+\mathfrak{z}(t)=\Lambda[\varphi,\psi,f,\mathfrak{g}](t),\,\,\,t\in[0,T].
+\end{gather*}
+
+\begin{Theorem}\label{abstrChauchyprob:nonaut:solution.representation}
+Найдутся оператор $\Theta\in\mathcal{L}(W^1_1([0,T],Y^*),\textrm{Є}([0,T];V,H))$ и функции $\Phi\in\mathfrak{R}([0,T]; V,H)$, $\Psi\in\mathfrak{S}(\Gamma; V,H)$, такие, что при всех $v\in V$, $h\in H$
+\begin{gather}\label{Lambda.repres}
+\Lambda[\varphi,\psi,f,\mathfrak{g}](t)=\Phi(t)\varphi+\Psi(t,0)\psi+\int\limits_0^t\Psi(t,\xi)f(\xi)d\xi+\Theta[\mathfrak{g}](t)\,\,\,\forall\,t\in[0,T].
+\end{gather}
+\end{Theorem}	
+\begin{Proof}
+Введём операторы $\Lambda_1:V\to \textrm{Є}([0,T];V,H)$, $\Lambda_2:H\to\textrm{Є}([0,T];V,H)$, $\Lambda_3:L_1([0,T],H)\to \textrm{Є}([0,T];V,H)$, $\Lambda_4:W^1_1([0,T], Y^*)\to\textrm{Є}([0,T];V,H)$  по формулам
+\begin{gather*}
+\Lambda_1[v]\equiv\Lambda[v,0,0,0],\,\,\,\Lambda_2[h]\equiv\Lambda[0,h,0,0]\,\,\,\forall\,(v,h)\in V\times H;\\
+\Lambda_3[\mathfrak{f}]\equiv\Lambda[0,0,\mathfrak{f},0],\,\,\,\Lambda_4[g]\equiv\Lambda[0,0,0,g]\,\,\,\forall\,\mathfrak{f}\in L_1([0,T],H)\,\,\,\forall\,g\in W^1_1([0,T], Y^*).
+\end{gather*}
+Тогда решение задачи Коши (\ref{abstrChauchyprobeq:nonaut}), (\ref{abstrChauchyprobinitcond:nonaut}) можно записать в виде
+\begin{gather*}
+\mathfrak{z}(t)=\Lambda_1[\varphi](t)+\Lambda_2[\psi](t)+\Lambda_3[f](t)+\Lambda_4[\mathfrak{g}](t),\,\,\,t\in[0,T].
+\end{gather*}
+Положив $\Theta\equiv\Lambda_4$, получим, что
+\begin{gather*}
+\mathfrak{z}(t)=\Lambda_1[\varphi](t)+\Lambda_2[\psi](t)+\Lambda_3[f](t)+\Theta[\mathfrak{g}](t),\,\,\,t\in[0,T].
+\end{gather*}
+
+Далее, на основании теоремы~\ref{L.V->En2([0,T];V,H)!theorem}, найдётся функция $\Phi\in\mathfrak{R}([0,T]; V,H)$, такая, что
+\begin{gather*}
+\Lambda_1[\varphi](t)\equiv\Phi(t)\varphi,\,\,\,t\in[0,T].
+\end{gather*}
+Как следствие,
+\begin{gather}\label{z.repres!Phi.Theta}
+\mathfrak{z}(t)=\Phi(t)\varphi+\Lambda_2[\psi](t)+\Lambda_3[f](t)+\Theta[\mathfrak{g}](t),\,\,\,t\in[0,T].
+\end{gather}
+
+Нетрудно видеть, что
+\begin{gather}\label{Lambda.2.repres}
+\Lambda_2[\psi](t)\equiv\mathfrak{y}[\psi](t,0).\,\,\,t\in[0,T].
+\end{gather}
+
+Покажем, что
+\begin{gather}\label{Lambda.3.repres}
+\Lambda_3[f](t)=\int\limits_0^t\mathfrak{e}[f](t,\tau)d\tau,\,\,\,t\in[0,T],
+\end{gather}
+где $\mathfrak{e}[f]$ ---  при $t\in[0,\tau]$ решение задачи Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:parametric:homogenious.eq.e!t.less.than.tau}
+{\mathfrak{e}}_{tt}+\mathfrak{A}(t){\mathfrak{e}}+\mathfrak{B}(t){\mathfrak{e}} + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{e}} = 0,\,\,\,t\in[0,\tau],\\
+\label{abstrChauchyprobinitcond:nonaut:parametric:homogenious.eq.e!t.less.than.tau}
+{\mathfrak{e}}|_{t=\tau}=0,\,\,\,{\mathfrak{e}}_t|_{t=\tau}=f(\tau),
+\end{gather}
+а при $t\in[0,T]$ --- решение задачи Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:parametric:homogenious.eq.e!t.greater.than.tau}
+{\mathfrak{e}}_{tt}+\mathfrak{A}(t){\mathfrak{e}}+\mathfrak{B}(t){\mathfrak{e}} + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{e}} = 0,\,\,\,t\in[\tau,T],\\
+\label{abstrChauchyprobinitcond:nonaut:parametric:homogenious.eq.e!t.greater.than.tau}
+{\mathfrak{e}}|_{t=\tau}=0,\,\,\,{\mathfrak{e}}_t|_{t=\tau}=f(\tau).
+\end{gather}
+
+В самом деле, введём функцию $\mathfrak{w}:[0,T]\to V$ равенством
+\begin{gather*}
+\mathfrak{w}(t)=\int\limits_0^t\mathfrak{e}[f](t,\tau)d\tau,\,\,\,t\in[0,T].
+\end{gather*}
+Дифференцируя эту функцию дважды, получим, что
+\begin{gather*}
+\dot{\mathfrak{w}}(t)=\mathfrak{e}[f](t,t)+\int\limits_0^t\mathfrak{e}_t[f](t,\tau)d\tau,\,\,\,
+\notag\ddot{\mathfrak{w}}(t)=\mathfrak{e}_t[f](t,t)+\int\limits_0^t\mathfrak{e}_{tt}[f](t,\tau)d\tau,\,\,\,t\in[0,T].
+\end{gather*}
+Пользуясь затем определением функции $\mathfrak{e}[f]$, выводим, что
+\begin{gather}\label{w.derivatives1}
+\dot{\mathfrak{w}}(t)=\int\limits_0^t\mathfrak{e}_t[f](t,\tau)d\tau,\,\,\,t\in[0,T];\,\,\,\ddot{\mathfrak{w}}(t)=f(t)+\int\limits_0^t\mathfrak{e}_{tt}[f](t,\tau)d\tau,\,\,\,t\in[0,T].
+\end{gather}
+
+Из~\eqref{w.derivatives1} вытекает, что
+\begin{gather}\label{w.initial.conds}
+\mathfrak{w}(0)=0,\,\,\,\dot{\mathfrak{w}}(0)=0.
+\end{gather}
+
+Далее, в силу~\eqref{w.derivatives1}, \eqref{abstrChauchyprobeq:nonaut:parametric:homogenious.eq.e!t.less.than.tau}, \eqref{abstrChauchyprobeq:nonaut:parametric:homogenious.eq.e!t.greater.than.tau},
+\begin{gather*}
+\ddot{\mathfrak{w}}(t)+\mathfrak{A}(t){\mathfrak{w}}(t)+\mathfrak{B}(t){\mathfrak{w}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{w}}(t)=\\
+=f(t)+\int\limits_0^t[\mathfrak{e}_{tt}[f](t,\tau)+\mathfrak{A}(t)\mathfrak{e}[f](t,\tau)+\mathfrak{B}(t)\mathfrak{e}[f](t,\tau) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}\mathfrak{e}[f](t,\tau)]d\tau=f(t).
+\end{gather*}
+
+Иными словами, 
+\begin{gather}\label{w.equation}
+\ddot{\mathfrak{w}}(t)+\mathfrak{A}(t){\mathfrak{w}}(t)+\mathfrak{B}(t){\mathfrak{w}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{w}}(t)=f(t),\,\,\,t\in[0,T].
+\end{gather}
+Из соотношений~\eqref{w.initial.conds} и \eqref{w.equation} и следует равенство~\eqref{Lambda.3.repres}.
+
+Из теоремы~\ref{abstrChauchyprobeq:nonaut:parametric:homogenious.eq!theorem.y.representation} и равенств~\eqref{Lambda.2.repres}, \eqref{Lambda.3.repres} вытекает, что найдётся функция $\Psi\in\mathfrak{S}(\Gamma; V,H)$,
+такая, что
+\begin{gather*}
+\Lambda_2[\psi](t)=\Psi(t,0)\psi,\,\,\,\Lambda_3[f](t)=\int\limits_0^t\Psi(t,\tau)f(\tau)d\tau,\,\,\,t\in[0,T].
+\end{gather*}
+Подставляя эти формулы в соотношение~\eqref{z.repres!Phi.Theta}, получим формулу~\eqref{Lambda.repres}. Теорема полностью доказана.
+\end{Proof}    
 
 	    \subsection{Нелинейное уравнение}
 	    
