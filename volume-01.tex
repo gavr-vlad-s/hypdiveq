@@ -6946,7 +6946,7 @@ A[h](\tau)=B(\tau)h,\,\,\,\forall\,h\in H,\,\,\,\tau\in[0,T];\\
     \|g(t,0,0)\|_H\leqslant K_1(t)\text{ при п.в. $t\in[0,T]$};
     \end{gather*}
 
-    \item функция $\Psi:\Gamma\to\mathcal{L}(V,H)$ такова, что формула
+    \item функция $\Psi:\Gamma\to\mathcal{L}(H,H)$ такова, что формула
     \begin{gather*}
     A[f](t)=\int\limits_0^t\Psi(t,\tau)f(\tau)d\tau\,\,\,\text{при всех $t\in[0,T]$ }\forall\,f\in L_1([0,T],H),
     \end{gather*}
@@ -10316,6 +10316,51 @@ $\mathbf{K}_0\in L_1[0,T]$, такая, что
 \|\mathfrak{z}\|_{{\textrm{Є}}([0,T];V,H)}\leqslant \varkappa_2[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|\mathfrak{b}(t,0,0)\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}].
 \end{gather}
 \end{Theorem}
+\begin{Proof}
+Положив $F(t)\equiv\mathfrak{b}(t,\mathfrak{z}(t),\dot{\mathfrak{z}}(t))$, $t\in[0,T]$, получим, что решение $\mathfrak{z}$ задачи Коши~(\ref{abstrChauchyprobeq:nonaut:nonlinear}), (\ref{abstrChauchyprobinitcond:nonaut:nonlinear}) является решением задачи Коши
+\begin{gather*}
+\ddot{\mathfrak{z}}(t)+\mathfrak{A}(t){\mathfrak{z}}(t)+\mathfrak{B}(t){\mathfrak{z}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{z}}(t) = F(t) + \mathfrak{C}^*\mathfrak{g}(t),\,\,\,t\in[0,T],\\
+{\mathfrak{z}}(0)=\varphi,\,\,\,\dot{\mathfrak{z}}(0)=\psi,
+\end{gather*}
+причём, в силу условий на функцию $\mathfrak{b}$, справедливо включение $F\in L_1([0,T],H)$.
+
+Поэтому, на основании теоремы~\ref{abstrChauchyprob:nonaut:solution.representation}, найдутся оператор $\Theta\in\mathcal{L}(W^1_1([0,T],Y^*),\textrm{Є}([0,T];V,H))$ и функции $\Phi\in\mathfrak{R}([0,T]; V,H)$, $\Psi\in\mathfrak{S}(\Gamma; V,H)$, такие, что при всех $v\in V$, $h\in H$
+\begin{gather}\label{nonlinear.equation.solution.repres1}
+\mathfrak{z}(t)=\Phi(t)\varphi+\Psi(t,0)\psi+\int\limits_0^t\Psi(t,\xi)F(\xi)d\xi+\Theta[\mathfrak{g}](t)\,\,\,\forall\,t\in[0,T].
+\end{gather}
+Следовательно, ввиду определения функции $F$,
+\begin{gather}\label{nonlinear.equation.solution.repres2}
+\mathfrak{z}(t)=\Phi(t)\varphi+\Psi(t,0)\psi+\Theta[\mathfrak{g}](t)+\int\limits_0^t\Psi(t,\xi)\mathfrak{b}(\xi,\mathfrak{z}(\xi),\dot{\mathfrak{z}}(\xi))d\xi\,\,\,\forall\,t\in[0,T].
+\end{gather}
+Положив здесь $\omega(t)\equiv\Phi(t)\varphi+\Psi(t,0)\psi+\Theta[\mathfrak{g}](t)$, $t\in[0,T]$, получим, что
+\begin{gather}\label{nonlinear.equation.solution.repres3}
+\mathfrak{z}(t)=\omega(t)+\int\limits_0^t\Psi(t,\xi)\mathfrak{b}(\xi,\mathfrak{z}(\xi),\dot{\mathfrak{z}}(\xi))d\xi\,\,\,\forall\,t\in[0,T].
+\end{gather}
+
+Иными словами, отыскание решения задачи Коши~(\ref{abstrChauchyprobeq:nonaut:nonlinear}), (\ref{abstrChauchyprobinitcond:nonaut:nonlinear}) в классе ${\textrm{Э}}([0,T];V,H)$ эквивалентно отысканию решения интегро--дифференциального уравнения~\eqref{nonlinear.equation.solution.repres3} в классе $\textrm{Є}([0,T];V,H)$. Применяя затем теорему~\ref{--integodifferential.equation!theorem}, заключаем, что уравнение~\ref{nonlinear.equation.solution.repres3} имеет единственное решение в классе $\textrm{Є}([0,T];V,H)$, причём найдётся постоянная $\varkappa^*>0$, такая, что
+\begin{gather*}
+\|\mathfrak{z}\|_{\textrm{Є}([0,T];V,H)}\leqslant\varkappa^*[\|\omega\|_{\textrm{Є}([0,T];V,H)}+\|\mathfrak{b}(\cdot,0,0)\|_{1,[0,T],H}].
+\end{gather*}
+Ввиду определения функции $\omega$, найдутся постоянные $\varkappa^*_1$, $\varkappa^*_2$, $\varkappa^*_3>0$, такие, что
+\begin{gather*}
+\|\omega\|_{\textrm{Є}([0,T];V,H)}\leqslant\varkappa^*_1\|\varphi\|_V+\varkappa^*_2\|\psi\|_H+\varkappa^*_3\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}\leqslant
+\sqrt{(\varkappa^*_1)^2+(\varkappa^*_2)^2}\sqrt{\|\varphi\|_V^2+\|\psi\|_H^2}+\varkappa^*_3\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}\leqslant\\
+\leqslant\varkappa_4^*[\sqrt{\|\varphi\|_V^2+\|\psi\|_H^2}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}],
+\end{gather*}
+где $\varkappa_4^*\equiv\max\{\sqrt{(\varkappa^*_1)^2+(\varkappa^*_2)^2},\varkappa^*_3\}$. Таким образом,
+\begin{gather*}
+\|\mathfrak{z}\|_{\textrm{Є}([0,T];V,H)}\leqslant\varkappa^*[\varkappa_4^*[\sqrt{\|\varphi\|_V^2+\|\psi\|_H^2}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}]+\|\mathfrak{b}(\cdot,0,0)\|_{1,[0,T],H}]\leqslant\\
+\leqslant\varkappa_5^*[\sqrt{\|\varphi\|_V^2+\|\psi\|_H^2}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+\|\mathfrak{b}(\cdot,0,0)\|_{1,[0,T],H}],
+\end{gather*}
+где $\varkappa_5^*\equiv\max\{\varkappa_4^*,1\}$.
+
+Итак, интегро--дифференциальное уравнение~\ref{nonlinear.equation.solution.repres3} имеет единственное решение $\mathfrak{z}\in\textrm{Є}([0,T];V,H)$, причём найдётся постоянная $\varkappa^*_5>0$, такая, что
+\begin{gather*}
+\|\mathfrak{z}\|_{\textrm{Є}([0,T];V,H)}\leqslant\varkappa_5^*[\sqrt{\|\varphi\|_V^2+\|\psi\|_H^2}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+\|\mathfrak{b}(\cdot,0,0)\|_{1,[0,T],H}],
+\end{gather*}
+
+Ввиду упомянутой выше эквивалентности интегро--дифференциального уравнения~\ref{nonlinear.equation.solution.repres3} и задачи Коши~(\ref{abstrChauchyprobeq:nonaut:nonlinear}), (\ref{abstrChauchyprobinitcond:nonaut:nonlinear}), это означает, что задача Коши~(\ref{abstrChauchyprobeq:nonaut:nonlinear}), (\ref{abstrChauchyprobinitcond:nonaut:nonlinear}) имеет единственное решение в смысле определения~\ref{defsolabstrChauchyprob1:nonaut:nonlinear}, и справедлива оценка~\eqref{abstrChauchyprobeq:nonaut:a_priori_solution_estimate1:nonlinear} с $\varkappa_3\equiv\varkappa_5^*$. Теорема полностью доказана.
+\end{Proof}
 
 	    \subsection{Линейное уравнение с мерой Радона в правой части}
 	    
