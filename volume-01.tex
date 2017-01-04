@@ -10363,6 +10363,113 @@ $\mathbf{K}_0\in L_1[0,T]$, такая, что
 \end{Proof}
 
 	    \subsection{Линейное уравнение с мерой Радона в правой части}
+Пусть $\varphi\in V$, $\psi\in H$, $f\in L_1([0,T],H)$, $\mathfrak{g}\in W^1_1([0,T], Y^*)$, $\mu\in\mathbf{M}([0,T],H)$ --- фиксированы.
+
+Пусть, кроме того, функции $\mathfrak{P}:[0,T]\to\mathcal{L}(H,H)$ и $\mathfrak{Q}:[0,T]\to\mathcal{L}(V,H)$ таковы, что
+\begin{enumerate}
+\item при каждом $h\in H$ отображение 
+\begin{gather*}
+[0,T]\ni t\mapsto\mathfrak{P}(t)h\in H
+\end{gather*}
+измеримо в смысле слабой топологии пространства $H$;
+
+\item при каждом $v\in V$ отображение 
+\begin{gather*}
+[0,T]\ni t\mapsto\mathfrak{Q}(t)v\in H
+\end{gather*}
+измеримо в смысле слабой топологии пространства $H$;
+
+\item конечны величины
+\begin{gather*}
+c_4\equiv\int\limits_0^T\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limits_0^T\|\mathfrak{Q}(t)\|_{V\to H}dt.
+\end{gather*}
+\end{enumerate}
+
+Рассмотрим задачу Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon}
+\ddot{\mathfrak{x}}(t)+\mathfrak{A}(t){\mathfrak{x}}(t)+\mathfrak{B}(t){\mathfrak{x}}(t) + \mathfrak{P}(t)\dot{\mathfrak{x}}(t) + \mathfrak{Q}(t){\mathfrak{x}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}(t) = f(t) + \mathfrak{C}^*\mathfrak{g}(t)+\mu(dt),\,\,\,t\in[0,T],\\
+\label{abstrChauchyprobinitcond:nonaut:Radon}
+{\mathfrak{x}}(T)=\varphi,\,\,\,\dot{\mathfrak{x}}(T)=\psi,
+\end{gather}
+и дадим следующее
+\begin{Definition}\label{SolutionDef1:nonaut:Radon} Функцию ${\mathfrak{z}}\in{\textrm{Э}}([0,T];V,H)$ назовём решением задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}),
+(\ref{abstrChauchyprobinitcond:nonaut:Radon}), если
+\begin{gather}\label{defsolabstrChauchyprob1:nonaut:Radon}
+\int\limits_0^T[-\langle\dot{\mathfrak{x}}(t),\dot{\eta}(t)\rangle_H+\langle \mathfrak{A}(t){\mathfrak{x}}(t),\eta(t)\rangle+\langle\mathfrak{P}(t)\dot{\mathfrak{x}}(t),\eta(t)\rangle_H+ \langle \mathfrak{B}(t){\mathfrak{x}}(t),\eta(t)\rangle + \langle\mathfrak{Q}(t){\mathfrak{x}}(t),\eta(t)\rangle_H + \\
++\langle \mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}(t),\mathfrak{G}\eta(t)\rangle_Z]dt+\langle\psi,\eta(T)\rangle_H=\notag\int\limits_0^T\langle f(t),\eta(t)\rangle_Hdt +\int\limits_0^T\langle{\mathfrak{g}}(t), \mathfrak{C}\eta(t)\rangle\,dt+\\
++\int\limits_{[0,T]}\langle\eta(t),\mu(dt)\rangle_H\,\,\,\forall\,{\eta}\in\hat{\textrm{Э}}{}([0,T];V,H);\,\,\,\notag \mathfrak{x}(T)=\varphi.
+\end{gather}
+\end{Definition}
+
+\begin{Theorem}\label{unique_existence_theorem:abstrChauchyprobeq:nonaut:Radon}
+Задача Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}) имеет единственное решение $\mathfrak{x}$ в смысле определения \ref{SolutionDef1:nonaut:Radon}.%,
+%причём найдётся постоянная $\varkappa_4>0$, зависящая лишь от $T$, $c_1$, $c_2$, $c_3$, $c_4>0$ и от $\|\mathfrak{C}\|_{V\to Y}$,  $\|\mathfrak{G}\|_{V\to Z}$, такая, что
+%\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:a_priori_solution_estimate}
+%\|\mathfrak{x}\|_{{\textrm{Э}}([0,T];V,H)}\leqslant \varkappa_4[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|f\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+\|\mu\|_{\mathbf{M}([0,T],H)}].
+%\end{gather}
+\end{Theorem}
+\begin{Proof}
+Доказательство теоремы разобьём на две части.
+
+1) Докажем единственность решения задачи Коши (\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}). В самом деле, пусть $\mathfrak{x}_1$, $\mathfrak{x}_2\in{\textrm{Э}}([0,T];V,H)$ --- решения задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}). Тогда их разность $\mathfrak{v}\equiv\mathfrak{x}_1-\mathfrak{x}_2$ является решением задачи Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:v}
+\ddot{\mathfrak{v}}(t)+\mathfrak{A}(t){\mathfrak{v}}(t)+\mathfrak{B}(t){\mathfrak{v}}(t) + \mathfrak{P}(t)\dot{\mathfrak{v}}(t) + \mathfrak{Q}(t){\mathfrak{v}}(t)  + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{v}}(t) = 0,\,\,\,t\in[0,T],\\
+\label{abstrChauchyprobinitcond:nonaut:Radon:v}
+{\mathfrak{v}}(T)=0,\,\,\,\dot{\mathfrak{v}}(T)=0,
+\end{gather}
+согласно теореме~\ref{abstrChauchyprobeq:nonaut:nonlinear!theorem} имеющей лишь тривиальное решение. Следовательно, задача Коши (\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}) может иметь не более одного решения в классе ${\textrm{Э}}([0,T];V,H)$.
+
+2) Докажем существование решения задачи Коши (\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}). Тогда, на основании леммы~\ref{measapprox!Banach.valued}, найдётся последовательность функций $\omega^k\in C([0,T],H)$, такая, что
+\begin{gather}\label{muk.convergence}
+\lim\limits_{k\to\infty}\int\limits_{[0,T]}\langle\zeta(t),\mu^k(dt)\rangle_H=\int\limits_{[0,T]}\langle\zeta(t),\mu(dt)\rangle, \,\,\,\forall\,\zeta\in C([a,\,b],H)
+\end{gather}
+где $\displaystyle\mu^k(E)\equiv\int\limits_E\omega^k(t)dt$, $E\subseteq [0,\,T]$ --- борелевское подмножество отрезка $[0,\,T]$, $k=1,2,\dots$.
+
+Рассмотрим задачу Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:xk}
+\ddot{\mathfrak{x}}(t)+\mathfrak{A}(t){\mathfrak{x}}(t)+\mathfrak{B}(t){\mathfrak{x}}(t) + \mathfrak{P}(t)\dot{\mathfrak{x}}(t) + \mathfrak{Q}(t){\mathfrak{x}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}(t) = f(t) + \mathfrak{C}^*\mathfrak{g}(t)+\mu^k(dt),\,\,\,t\in[0,T],\\
+\label{abstrChauchyprobinitcond:nonaut:Radon:xk}
+{\mathfrak{x}}(T)=\varphi,\,\,\,\dot{\mathfrak{x}}(T)=\psi,
+\end{gather}
+и обозначим её решение через ${\mathfrak{x}}^k$. Ясно, что~\eqref{abstrChauchyprobeq:nonaut:Radon:xk} можно переписать в эквивалентном виде
+\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:xk1}
+\ddot{\mathfrak{x}}(t)+\mathfrak{A}(t){\mathfrak{x}}(t)+\mathfrak{B}(t){\mathfrak{x}}(t) + \mathfrak{P}(t)\dot{\mathfrak{x}}(t) + \mathfrak{Q}(t){\mathfrak{x}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}(t) = f(t) + \mathfrak{C}^*\mathfrak{g}(t)+\omega^k(t),\,\,\,t\in[0,T],\\
+\label{abstrChauchyprobinitcond:nonaut:Radon:xk1}
+{\mathfrak{x}}(T)=\varphi,\,\,\,\dot{\mathfrak{x}}(T)=\psi.
+\end{gather}
+В силу теоремы~\ref{abstrChauchyprobeq:nonaut:nonlinear!theorem} и эквивалентности задач Коши~\eqref{abstrChauchyprobeq:nonaut:Radon:xk}, \eqref{abstrChauchyprobinitcond:nonaut:Radon:xk} и \eqref{abstrChauchyprobeq:nonaut:Radon:xk1}, \eqref{abstrChauchyprobinitcond:nonaut:Radon:xk1}, заключаем, что задача Коши~\eqref{abstrChauchyprobeq:nonaut:Radon:xk}, \eqref{abstrChauchyprobinitcond:nonaut:Radon:xk}
+имеет единственное решение ${\mathfrak{x}}^k\in{\textrm{Э}}([0,T];V,H)$, причём
+\begin{gather*}
+\|\mathfrak{x}^k\|_{{\textrm{Э}}([0,T];V,H)}\leqslant \varkappa_3[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|f\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+\|\omega^k\|_{1,[0,T],H}].
+\end{gather*}
+Пользуясь здесь определением мер $\mu^k$, получим, что
+\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:xk:a_priori_solution_estimate}
+\|\mathfrak{x}^k\|_{{\textrm{Э}}([0,T];V,H)}\leqslant \varkappa_3[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|f\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+\|\mu^k\|_{\mathbf{M}([0,T],H)}].
+\end{gather}
+Ввиду~\eqref{muk.convergence}, найдётся константа $K>0$, такая, что $\|\mu^k\|_{\mathbf{M}([0,T],H)}\leqslant K$, $k=1,2,\dots$, что, в силу~\eqref{abstrChauchyprobeq:nonaut:Radon:xk:a_priori_solution_estimate}, влечёт неравенство
+\begin{gather*} 
+\|\mathfrak{x}^k\|_{{\textrm{Э}}([0,T];V,H)}\leqslant\tilde{K},
+\end{gather*}
+где $\tilde{K}\equiv\varkappa_3[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|f\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+K]$. Поэтому, ввиду теоремы \ref{V1120QTcompactness:abstract}, найдутся подпоследовательность $\mathfrak{x}^{k_m}$, $m=1,2,\dots$, последовательности $\mathfrak{x}^N$, $k=1,2,\dots$, и функция $\mathfrak{x}\in \textrm{Э}([0,T];V,H)$, такие, что 
+\begin{gather}\label{sec:more.more.abstract:xkm.convergence}
+\mathfrak{x}^{k_m}\to\mathfrak{x},\,\,\,m\to\infty,\,\,\,\mbox{слабо в $\mathcal{W}^1_2([0,T];V,H)$},\,\,\,
+\lim\limits_{m\to\infty}\max\limits_{t\in[0,T]}\|\mathfrak{x}^{N_m}(t)-\mathfrak{x}(t)\|_{H}=0;\\
+\notag \mathfrak{x}^{k_m}\to\mathfrak{x},\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([0,T],V)$};\,\,\,
+\dot{\mathfrak{x}}^{k_m}\to\dot{\mathfrak{x}},\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([0,T],H)$};\\
+\notag\mathfrak{z}^{k_m}\to\mathfrak{x},\,\,\,m\to\infty,\,\,\,\mbox{в $V^*$--топологии пространства $C_s([0,T],V)$};\\
+\notag\lim\limits_{m\to\infty}\max\limits_{t\in[0,T]}\|\mathfrak{G}[\mathfrak{x}^{k_m}(t)]-\mathfrak{G}[\mathfrak{x}(t)]\|_{Z}=0,\,\,\,
+\lim\limits_{m\to\infty}\max\limits_{t\in[0,T]}\|\mathfrak{C}[\mathfrak{x}^{k_m}(t)]-\mathfrak{C}[\mathfrak{x}(t)]\|_{Y}=0.
+\end{gather}
+Из определения решения задачи Коши~\eqref{abstrChauchyprobeq:nonaut:Radon:xk}, \eqref{abstrChauchyprobinitcond:nonaut:Radon:xk} с $k=k_m$ выводим, что
+\begin{gather*}
+\int\limits_0^T[-\langle\dot{\mathfrak{x}}^{k_m}(t),\dot{\eta}(t)\rangle_H+\langle \mathfrak{A}(t){\mathfrak{x}}^{k_m}(t),\eta(t)\rangle+\langle\mathfrak{P}(t)\dot{\mathfrak{x}}^{k_m}(t),\eta(t)\rangle_H+ \langle \mathfrak{B}(t){\mathfrak{x}}^{k_m}(t),\eta(t)\rangle + \langle\mathfrak{Q}(t){\mathfrak{x}}^{k_m}(t),\eta(t)\rangle_H + \\
++\langle \mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}^{k_m}(t),\mathfrak{G}\eta(t)\rangle_Z]dt+\langle\psi,\eta(T)\rangle_H=\notag\int\limits_0^T\langle f(t),\eta(t)\rangle_Hdt +\int\limits_0^T\langle{\mathfrak{g}}(t), \mathfrak{C}\eta(t)\rangle\,dt+\\
++\int\limits_{[0,T]}\langle\eta(t),\mu^{k_m}(dt)\rangle_H\,\,\,\forall\,{\eta}\in\hat{\textrm{Э}}{}([0,T];V,H);\,\,\,\notag \mathfrak{x}(T)=\varphi.
+\end{gather*}
+Переходя в последних соотношениях к пределу при $m\to\infty$ с учётом~\eqref{muk.convergence} и \eqref{sec:more.more.abstract:xkm.convergence}, получим, что $\mathfrak{x}$ удовлетворяет тождеству~\eqref{defsolabstrChauchyprob1:nonaut:Radon}, и, следовательно, является решением задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}). Итак, задача Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}) имеет решение $\mathfrak{x}\in{\textrm{Э}}{}([0,T];V,H)$.
+\end{Proof}
+
+
 	    
 	    \subsection{Параметрическая задача Коши с ненулевой правой частью}
 
