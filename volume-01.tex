@@ -10453,7 +10453,7 @@ c_4\equiv\int\limits_0^T\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limit
 где $\tilde{K}\equiv\varkappa_3[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|f\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+K]$. Поэтому, ввиду теоремы \ref{V1120QTcompactness:abstract}, найдутся подпоследовательность $\mathfrak{x}^{k_m}$, $m=1,2,\dots$, последовательности $\mathfrak{x}^N$, $k=1,2,\dots$, и функция $\mathfrak{x}\in \textrm{Э}([0,T];V,H)$, такие, что 
 \begin{gather}\label{sec:more.more.abstract:xkm.convergence}
 \mathfrak{x}^{k_m}\to\mathfrak{x},\,\,\,m\to\infty,\,\,\,\mbox{слабо в $\mathcal{W}^1_2([0,T];V,H)$},\,\,\,
-\lim\limits_{m\to\infty}\max\limits_{t\in[0,T]}\|\mathfrak{x}^{N_m}(t)-\mathfrak{x}(t)\|_{H}=0;\\
+\lim\limits_{m\to\infty}\max\limits_{t\in[0,T]}\|\mathfrak{x}^{k_m}(t)-\mathfrak{x}(t)\|_{H}=0;\\
 \notag \mathfrak{x}^{k_m}\to\mathfrak{x},\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([0,T],V)$};\,\,\,
 \dot{\mathfrak{x}}^{k_m}\to\dot{\mathfrak{x}},\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([0,T],H)$};\\
 \notag\mathfrak{z}^{k_m}\to\mathfrak{x},\,\,\,m\to\infty,\,\,\,\mbox{в $V^*$--топологии пространства $C_s([0,T],V)$};\\
@@ -10467,6 +10467,48 @@ c_4\equiv\int\limits_0^T\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limit
 +\int\limits_{[0,T]}\langle\eta(t),\mu^{k_m}(dt)\rangle_H\,\,\,\forall\,{\eta}\in\hat{\textrm{Э}}{}([0,T];V,H);\,\,\,\notag \mathfrak{x}(T)=\varphi.
 \end{gather*}
 Переходя в последних соотношениях к пределу при $m\to\infty$ с учётом~\eqref{muk.convergence} и \eqref{sec:more.more.abstract:xkm.convergence}, получим, что $\mathfrak{x}$ удовлетворяет тождеству~\eqref{defsolabstrChauchyprob1:nonaut:Radon}, и, следовательно, является решением задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}). Итак, задача Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}) имеет решение $\mathfrak{x}\in{\textrm{Э}}{}([0,T];V,H)$.
+
+3) Выведем представление для решения задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}). Прежде всего заметим, что задачу Коши~(\ref{abstrChauchyprobeq:nonaut:Radon:xk}), (\ref{abstrChauchyprobinitcond:nonaut:Radon:xk}) можно переписать в виде 
+\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:xk.1}
+\ddot{\mathfrak{x}}^k(t)+\mathfrak{A}(t){\mathfrak{x}}^k(t)+\mathfrak{B}(t){\mathfrak{x}}^k(t) +  \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}^k(t) = F^k(t)+ \mathfrak{C}^*\mathfrak{g}(t)+\omega^k(t),\,\,\,t\in[0,T],\\
+\label{abstrChauchyprobinitcond:nonaut:Radon:xk.1}
+{\mathfrak{x}}^k(T)=\varphi,\,\,\,\dot{\mathfrak{x}}^k(T)=\psi,
+\end{gather}
+где $F^k(t)\equiv f(t) - \mathfrak{P}(t)\dot{\mathfrak{x}}^k(t) - \mathfrak{Q}(t){\mathfrak{x}}^k(t)$, $t\in[0,T]$.
+
+Поэтому, на основании теоремы~\ref{abstrChauchyprob:nonaut:solution.representation}, справедливо представление
+\begin{gather*}
+{\mathfrak{x}}^k(t)=\mathfrak{h}^k(t)+\int\limits_{0}^{t}\Psi(t,\xi)\mu^k(d\xi),\,\,\,t\in[0,T],
+\end{gather*} 
+где введено обозначение
+\begin{gather*}
+\mathfrak{h}^k(t)=\Phi(t)\varphi+\Psi(t,0)\psi+\int\limits_0^t\Psi(t,\xi)f(\xi)d\xi+\Theta[\mathfrak{g}](t)-\int\limits_0^t\Psi(t,\xi)[\mathfrak{P}(\xi)\dot{\mathfrak{x}}^k(\xi) + \mathfrak{Q}(\xi){\mathfrak{x}}^k(\xi)]d\xi,\,\,\,t\in[0,T].
+\end{gather*}
+Нетрудно видеть, что имеет место представление
+\begin{gather*}
+\dot{\mathfrak{x}}^k(t)=\dot{\mathfrak{h}}^k(t)+\int\limits_{0}^{t}\Psi_t(t,\xi)\mu^k(d\xi),\,\,\,t\in[0,T],
+\end{gather*} 
+и выполнены предельные соотношения
+\begin{gather}\label{hk.convergence}
+\mathfrak{h}^{k_m}\to\mathfrak{h},\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([0,T],V)$};\,\,\,
+\dot{\mathfrak{h}}^{k_m}\to\dot{\mathfrak{h}},\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([0,T],H)$};\\
+\label{Psi.mu.k.convergence}
+\int\limits_{0}^{t}\Psi(t,\xi)\mu^{k_m}(d\xi)\to\int\limits_{0}^{t}\Psi(t,\xi)\mu(d\xi),\,\,\,m\to\infty,\,\,\,\text{слабо в $V$ }\forall\,t\in[0,T];\\
+\label{Psi.t.mu.k.convergence}
+\int\limits_{0}^{t}\Psi_t(t,\xi)\mu^{k_m}(d\xi)\to\int\limits_{0}^{t}\Psi_t(t,\xi)\mu(d\xi),\,\,\,m\to\infty,\,\,\,\text{слабо в $H$ }\forall\,t\in[0,T].
+\end{gather}
+Здесь введено обозначение
+\begin{gather*}
+\mathfrak{h}(t)=\Phi(t)\varphi+\Psi(t,0)\psi+\int\limits_0^t\Psi(t,\xi)f(\xi)d\xi+\Theta[\mathfrak{g}](t)-\int\limits_0^t\Psi(t,\xi)[\mathfrak{P}(\xi)\dot{\mathfrak{x}}(\xi) + \mathfrak{Q}(\xi){\mathfrak{x}}(\xi)]d\xi,\,\,\,t\in[0,T].
+\end{gather*}
+Далее, поскольку $\mathfrak{x}^{k_m}\in{\textrm{Э}}{}([0,T];V,H)$, то для всех $\zeta\in\mathfrak{D}(0,T)$
+\begin{gather*}
+\left\langle\int\limits_0^T\left[\int\limits_{0}^{t}\Psi(t,\xi)\mu^{k_m}(d\xi)\right]\zeta'(t)dt+\int\limits_0^T\left[\int\limits_{0}^{t}\Psi_t(t,\xi)\mu^{k_m}(d\xi)\right]\zeta(t)dt,h \right\rangle=0\,\,\,\forall\,h\in H.
+\end{gather*}
+Переходя здесь к пределу при $m\to\infty$, получим, что при всех $\zeta\in\mathfrak{D}(0,T)$
+\begin{gather*}
+\left\langle\int\limits_0^T\left[\int\limits_{0}^{t}\Psi(t,\xi)\mu(d\xi)\right]\zeta'(t)dt+\int\limits_0^T\left[\int\limits_{0}^{t}\Psi_t(t,\xi)\mu(d\xi)\right]\zeta(t)dt,h \right\rangle=0\,\,\,\forall\,h\in H.
+\end{gather*}
 \end{Proof}
 
 
