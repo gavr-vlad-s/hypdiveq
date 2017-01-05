@@ -9981,7 +9981,7 @@ $\lim\limits_{N\to\infty} \|\eta^N-\eta\|_{\mathcal{W}^1_2([0,T];V,H)}=0$. Сл�
 \label{abstrChauchyprobinitcond:nonaut:parametric:homogenious.eq!t.less.than.tau}
 {\mathfrak{y}}|_{t=\tau}=0,\,\,\,{\mathfrak{y}}_t|_{t=\tau}=\psi,
 \end{gather}
-а при $t\in[0,T]$ --- как решение задачи Коши
+а при $t\in[\tau,T]$ --- как решение задачи Коши
 \begin{gather}\label{abstrChauchyprobeq:nonaut:parametric:homogenious.eq!t.greater.than.tau}
 {\mathfrak{y}}_{tt}+\mathfrak{A}(t){\mathfrak{y}}+\mathfrak{B}(t){\mathfrak{y}} + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{y}} = 0,\,\,\,t\in[\tau,T],\\
 \label{abstrChauchyprobinitcond:nonaut:parametric:homogenious.eq!t.greater.than.tau}
@@ -10603,10 +10603,98 @@ ${\textrm{Э}}{}([0,T];V,H)$. Поэтому и справедлива апри�
 Теорема полностью доказана.
 \end{Proof}
 
-
+\begin{Corrolary}\label{abstrChauchyprobeq:nonaut:Radon:g.mu}
+Если в задаче Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}) мера $\mu\in\mathbf{M}([0,T],H)$ имеет вид
+$$
+\mu(E)=\int\limits_E\mathbf{g}(t)\nu(dt),\,\,\,\text{$E\subseteq[0,T]$ --- борелевское подмножество отрезка $[0,T]$},
+$$
+где $\nu\in \mathbf{M}[0,T]$, $\mathbf{g}\in C([0,T],H)$, то априорную оценку~\eqref{abstrChauchyprobeq:nonaut:Radon:a_priori_solution_estimate} можно переписать в виде
+\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:a_priori_solution_estimate:1}
+\|\mathfrak{x}\|_{{\textrm{Э}}([0,T];V,H)}\leqslant \varkappa_4[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|f\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+\pmb{|}\mathbf{g}\pmb{|}^{(0)}_{[0,T],H}\|\nu\|].
+\end{gather}
+\end{Corrolary}
 	    
 	    \subsection{Параметрическая задача Коши с ненулевой правой частью}
+%Для каждых $\psi\in C([0,T],H)$, $f\in $	    
+Определим функцию $\theta[\psi,f](t,\tau)$, $t\in[0,T]$, $\tau\in[0,T]$, при $t\in[0,\tau]$ как решение задачи Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!t.less.than.tau}
+\theta_{tt}+\mathfrak{A}(t)\theta+\mathfrak{B}(t)\theta + \mathfrak{P}(t)\dot{\theta}_t + \mathfrak{Q}(t)\theta + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}\theta = f(t,\tau),\,\,\,t\in[0,\tau],\\
+\label{abstrChauchyprobinitcond:nonaut:parametric:non-homogenious.eq!t.less.than.tau}
+\theta|_{t=\tau}=0,\,\,\,\theta_t|_{t=\tau}=\psi(\tau),
+\end{gather}
+а при $t\in[\tau,T]$ --- как решение задачи Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!t.greater.than.tau}
+\theta_{tt}+\mathfrak{A}(t)\theta+\mathfrak{B}(t)\theta + \mathfrak{P}(t){\theta}_t + \mathfrak{Q}(t)\theta + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}\theta = f(t,\tau),\,\,\,t\in[\tau,T],\\
+\label{abstrChauchyprobinitcond:nonaut:parametric:non-homogenious.eq!t.greater.than.tau}
+\theta|_{t=\tau}=0,\,\,\,\theta_t|_{t=\tau}=\psi(\tau).
+\end{gather}
 
+Введём функцию $\varpi[\psi,\mu](t)$, $t\in[0,T]$, как решение задачи Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:varpi}
+\ddot{\varpi}(t)+\mathfrak{A}(t){\varpi}(t)+\mathfrak{B}(t){\varpi}(t) + \mathfrak{P}(t)\dot{\varpi}(t) + \mathfrak{Q}(t){\varpi}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\varpi}(t) = \psi(t)\mu(dt),\,\,\,t\in[0,T],\\
+\label{abstrChauchyprobinitcond:nonaut:Radon:varpi}
+{\varpi}(T)=0,\,\,\,\dot{\varpi}(T)=0,
+\end{gather}
+
+Наконец через $\zeta[\psi](t,\tau)$, $(t,\tau)\in\Gamma$, обозначим решение задачи Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:parametric:non-homogenious.zeta}
+\zeta_{tt}+\mathfrak{A}(t)\zeta+\mathfrak{B}(t)\zeta + \mathfrak{P}(t)\dot{\zeta}_t + \mathfrak{Q}(t)\zeta + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}\zeta = \psi(t)\mydelta_\tau(dt),\,\,\,t\in[0,T],\\
+\label{abstrChauchyprobinitcond:nonaut:parametric:non-homogenious.zeta}
+\zeta|_{t=T}=0,\,\,\,\zeta_t|_{t=T}=0.
+\end{gather}
+
+
+При этом считаем, что выполнены следующие условия:
+\begin{enumerate}
+\item функции $\mathfrak{P}:[0,T]\to\mathcal{L}(H,H)$ и $\mathfrak{Q}:[0,T]\to\mathcal{L}(V,H)$ таковы, что 
+{
+\renewcommand{\theenumii}{\asbuk{enumii}}
+\renewcommand{\labelenumii}{\theenumii)}
+\begin{enumerate}
+\item при каждом $h\in H$ отображение 
+\begin{gather*}
+[0,T]\ni t\mapsto\mathfrak{P}(t)h\in H
+\end{gather*}
+измеримо в смысле слабой топологии пространства $H$; 
+
+\item при каждом $v\in V$ отображение 
+\begin{gather*}
+[0,T]\ni t\mapsto\mathfrak{Q}(t)v\in H
+\end{gather*}
+измеримо в смысле слабой топологии пространства $H$;
+
+\item конечны величины
+\begin{gather*}
+c_4\equiv\int\limits_0^T\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limits_0^T\|\mathfrak{Q}(t)\|_{V\to H}dt.
+\end{gather*}
+\end{enumerate}
+} 
+
+\item $\psi\in C([0,T],H)$, $f\in C([0,T],L_1([0,T],H))$, $\mu\in\mathbf{M}[0,T]$.
+\end{enumerate}
+
+%Пусть $\varphi\in V$, $\psi\in H$, $f\in L_1([0,T],H)$, $\mathfrak{g}\in W^1_1([0,T], Y^*)$, $\mu\in\mathbf{M}([0,T],H)$ --- фиксированы.
+%
+%Пусть, кроме того,
+%\begin{enumerate}
+%\item
+%\end{enumerate}
+%
+%Рассмотрим задачу Коши
+%\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon}
+%\ddot{\mathfrak{x}}(t)+\mathfrak{A}(t){\mathfrak{x}}(t)+\mathfrak{B}(t){\mathfrak{x}}(t) + \mathfrak{P}(t)\dot{\mathfrak{x}}(t) + \mathfrak{Q}(t){\mathfrak{x}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}(t) = f(t) + \mathfrak{C}^*\mathfrak{g}(t)+\mu(dt),\,\,\,t\in[0,T],\\
+%\label{abstrChauchyprobinitcond:nonaut:Radon}
+%{\mathfrak{x}}(T)=\varphi,\,\,\,\dot{\mathfrak{x}}(T)=\psi,
+%\end{gather}
+%и дадим следующее
+%\begin{Definition}\label{SolutionDef1:nonaut:Radon} Функцию ${\mathfrak{z}}\in{\textrm{Э}}([0,T];V,H)$ назовём решением задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}),
+%(\ref{abstrChauchyprobinitcond:nonaut:Radon}), если
+%\begin{gather}\label{defsolabstrChauchyprob1:nonaut:Radon}
+%\int\limits_0^T[-\langle\dot{\mathfrak{x}}(t),\dot{\eta}(t)\rangle_H+\langle \mathfrak{A}(t){\mathfrak{x}}(t),\eta(t)\rangle+\langle\mathfrak{P}(t)\dot{\mathfrak{x}}(t),\eta(t)\rangle_H+ \langle \mathfrak{B}(t){\mathfrak{x}}(t),\eta(t)\rangle + \langle\mathfrak{Q}(t){\mathfrak{x}}(t),\eta(t)\rangle_H + \\
+%+\langle \mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}(t),\mathfrak{G}\eta(t)\rangle_Z]dt+\langle\psi,\eta(T)\rangle_H=\notag\int\limits_0^T\langle f(t),\eta(t)\rangle_Hdt +\int\limits_0^T\langle{\mathfrak{g}}(t), \mathfrak{C}\eta(t)\rangle\,dt+\\
+%+\int\limits_{[0,T]}\langle\eta(t),\mu(dt)\rangle_H\,\,\,\forall\,{\eta}\in\hat{\textrm{Э}}{}([0,T];V,H);\,\,\,\notag \mathfrak{x}(T)=\varphi.
+%\end{gather}
+%\end{Definition}
 
 
 
