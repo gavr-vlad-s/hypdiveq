@@ -10402,14 +10402,14 @@ c_4\equiv\int\limits_0^T\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limit
 \end{Definition}
 
 \begin{Theorem}\label{unique_existence_theorem:abstrChauchyprobeq:nonaut:Radon}
-Задача Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}) имеет единственное решение $\mathfrak{x}$ в смысле определения \ref{SolutionDef1:nonaut:Radon}.%,
-%причём найдётся постоянная $\varkappa_4>0$, зависящая лишь от $T$, $c_1$, $c_2$, $c_3$, $c_4>0$ и от $\|\mathfrak{C}\|_{V\to Y}$,  $\|\mathfrak{G}\|_{V\to Z}$, такая, что
-%\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:a_priori_solution_estimate}
-%\|\mathfrak{x}\|_{{\textrm{Э}}([0,T];V,H)}\leqslant \varkappa_4[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|f\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+\|\mu\|_{\mathbf{M}([0,T],H)}].
-%\end{gather}
+Задача Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}) имеет единственное решение $\mathfrak{x}$ в смысле определения \ref{SolutionDef1:nonaut:Radon},
+причём найдётся постоянная $\varkappa_4>0$, зависящая лишь от $T$, $c_1$, $c_2$, $c_3$, $c_4$, $c_5>0$ и от $\|\mathfrak{C}\|_{V\to Y}$,  $\|\mathfrak{G}\|_{V\to Z}$, такая, что
+\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:a_priori_solution_estimate}
+\|\mathfrak{x}\|_{{\textrm{Э}}([0,T];V,H)}\leqslant \varkappa_4[\sqrt{\|\varphi\|^2_V+\|\psi\|_H^2}+ \|f\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+\|\mu\|_{\mathbf{M}([0,T],H)}].
+\end{gather}
 \end{Theorem}
 \begin{Proof}
-Доказательство теоремы разобьём на две части.
+Доказательство теоремы разобьём на четыре части.
 
 1) Докажем единственность решения задачи Коши (\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}). В самом деле, пусть $\mathfrak{x}_1$, $\mathfrak{x}_2\in{\textrm{Э}}([0,T];V,H)$ --- решения задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}). Тогда их разность $\mathfrak{v}\equiv\mathfrak{x}_1-\mathfrak{x}_2$ является решением задачи Коши
 \begin{gather}\label{abstrChauchyprobeq:nonaut:Radon:v}
@@ -10509,6 +10509,98 @@ c_4\equiv\int\limits_0^T\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limit
 \begin{gather*}
 \left\langle\int\limits_0^T\left[\int\limits_{0}^{t}\Psi(t,\xi)\mu(d\xi)\right]\zeta'(t)dt+\int\limits_0^T\left[\int\limits_{0}^{t}\Psi_t(t,\xi)\mu(d\xi)\right]\zeta(t)dt,h \right\rangle=0\,\,\,\forall\,h\in H.
 \end{gather*}
+Иными словами, мы доказали, что для решения $\mathfrak{x}\in{\textrm{Э}}{}([0,T];V,H)$ задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}) справедливо представление
+\begin{gather}\label{x.representation}
+\mathfrak{x}(t)=\Phi(t)\varphi+\Psi(t,0)\psi+\int\limits_0^t\Psi(t,\xi)f(\xi)d\xi+\Theta[\mathfrak{g}](t)+\int\limits_{0}^{t}\Psi(t,\xi)\mu(d\xi)-\\
+\notag-\int\limits_0^t\Psi(t,\xi)[\mathfrak{P}(\xi)\dot{\mathfrak{x}}(\xi) + \mathfrak{Q}(\xi){\mathfrak{x}}(\xi)]d\xi,\,\,\,t\in[0,T],
+\end{gather}
+причём
+\begin{gather}\label{dot.x.representation}
+\dot{\mathfrak{x}}(t)=\Phi'(t)\varphi+\Psi_t(t,0)\psi+\int\limits_0^t\Psi_t(t,\xi)f(\xi)d\xi+\frac{d\Theta[\mathfrak{g}](t)}{dt}+\int\limits_{0}^{t}\Psi_t(t,\xi)\mu(d\xi)-\\
+\notag-\int\limits_0^t\Psi_t(t,\xi)[\mathfrak{P}(\xi)\dot{\mathfrak{x}}(\xi) + \mathfrak{Q}(\xi){\mathfrak{x}}(\xi)]d\xi,\,\,\,t\in[0,T].
+\end{gather}
+
+4) Докажем априорную оценку~\eqref{abstrChauchyprobeq:nonaut:Radon:a_priori_solution_estimate}. Прежде всего введём банахово пространство $\mathfrak{T}$ как множество пятёрок $\pi\equiv(v,h,f,\mathfrak{g},\mu)\in V\times H\times L_1([0,T],H)\times W^1_1([0,T],Y^*)\times\mathbf{M}([0,T],H)$, наделённое нормой
+$$
+\|\pi\|_{\mathfrak{T}}\equiv\sqrt{\|v\|_V^2+\|h\|_H^2}+\|f\|_{1,[0,T],H}+\|\mathfrak{g}\|^{(1)}_{1,[0,T],Y^*}+\|\mu\|_{\mathbf{M}([0,T],H)}.
+$$
+Далее, для каждой пятёрки $\pi\equiv(v,h,f,\mathfrak{g},\mu)\in\mathfrak{T}$ через $\mathfrak{x}[\pi]$ обозначим решение задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}), (\ref{abstrChauchyprobinitcond:nonaut:Radon}) с $\varphi\equiv v$, $\psi\equiv h$. Нетрудно видеть, что отображение
+\begin{gather}\label{pi.mapsto.x.pi:mapping}
+\mathfrak{T}\ni\pi\mapsto\mathfrak{x}[\pi]\in{\textrm{Э}}{}([0,T];V,H)
+\end{gather}
+линейно. Докажем, что это отображение --- непрерывно. Для этого достаточно доказать, что оно непрерывно в нуле.
+
+В самом деле, пусть последовательность пятёрок $\pi^n\equiv(v^n,h^n,f^n,\mathfrak{g}^n,\mu^n)\in\mathfrak{T}$, $n=1,2,\dots$, такова, что
+\begin{gather}\label{(v.h.f.g.mu).convergence}
+\|\pi^n\|_{\mathfrak{T}}\equiv\sqrt{\|v^n\|_V^2+\|h^n\|_H^2}+\|f^n\|_{1,[0,T],H}+\|\mathfrak{g}^n\|^{(1)}_{1,[0,T],Y^*}+\|\mu^n\|_{\mathbf{M}([0,T],H)}\to0,\,\,\,n\to\infty.
+\end{gather}
+Для краткости введём обозначение $\mathfrak{x}^n\equiv\mathfrak{x}[\pi^n]$. Тогда, на основании представлений~\eqref{x.representation} и \eqref{dot.x.representation},
+\begin{gather*}
+\mathfrak{x}^n(t)=\Phi(t)v^n+\Psi(t,0)h^n+\int\limits_0^t\Psi(t,\xi)f^n(\xi)d\xi+\Theta[\mathfrak{g}^n](t)+\int\limits_{0}^{t}\Psi(t,\xi)\mu^n(d\xi)-\\
+\notag-\int\limits_0^t\Psi(t,\xi)[\mathfrak{P}(\xi)\dot{\mathfrak{x}}^n(\xi) + \mathfrak{Q}(\xi){\mathfrak{x}}^n(\xi)]d\xi,\,\,\,t\in[0,T];\\
+\dot{\mathfrak{x}}^n(t)=\Phi'(t)v^n+\Psi_t(t,0)h^n+\int\limits_0^t\Psi_t(t,\xi)f^n(\xi)d\xi+\frac{d\Theta[\mathfrak{g}^n](t)}{dt}+\int\limits_{0}^{t}\Psi_t(t,\xi)\mu^n(d\xi)-\\
+\notag-\int\limits_0^t\Psi_t(t,\xi)[\mathfrak{P}(\xi)\dot{\mathfrak{x}}^n(\xi) + \mathfrak{Q}(\xi){\mathfrak{x}}^n(\xi)]d\xi,\,\,\,t\in[0,T].
+\end{gather*}
+Следовательно,
+\begin{gather*}
+\|\mathfrak{x}^n(t)\|_V\leqslant[\sup\limits_{\tau\in[0,T]}\|\Phi(\tau)\|_{V\to V}]\|v^n\|_V+[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi(\tau,\xi)\|_{H\to V}]\|h^n\|_H+ [\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi(\tau,\xi)\|_{H\to V}]\|f^n\|_{1,[0,T],H}+\\
++\|\Theta\|_{W^1_1([0,T],Y^*)\to{\textrm{Є}}{}([0,T];V,H)}\|\mathfrak{g}^n\|^{(1)}_{1,[0,T],Y^*}+[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi(\tau,\xi)\|_{H\to V}]\|\mu^n\|_{\mathbf{M}([0,T],H)}+\\
++[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi(\tau,\xi)\|_{H\to V}]\int\limits_0^t[\|\mathfrak{P}(\xi)\|_{H\to H}\|\dot{\mathfrak{x}}^n(\xi)\|_H + \|\mathfrak{Q}(\xi)\|_{V\to H}\|{\mathfrak{x}}^n(\xi)\|_V]d\xi\leqslant\\
+\leqslant\sqrt{[\sup\limits_{\tau\in[0,T]}\|\Phi(\tau)\|_{V\to V}]^2+[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi(\tau,\xi)\|_{H\to V}]^2}\sqrt{\|v^n\|_V^2+\|h^n\|_H^2}\,+\\
++[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi(\tau,\xi)\|_{H\to V}][\|f^n\|_{1,[0,T],H}+\|\mu^n\|_{\mathbf{M}([0,T],H)}]+\|\Theta\|_{W^1_1([0,T],Y^*)\to{\textrm{Є}}{}([0,T];V,H)}\|\mathfrak{g}^n\|^{(1)}_{1,[0,T],Y^*}+\\
++[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi(\tau,\xi)\|_{H\to V}]\int\limits_0^t[\|\mathfrak{P}(\xi)\|_{H\to H}\|\dot{\mathfrak{x}}^n(\xi)\|_H + \|\mathfrak{Q}(\xi)\|_{V\to H}\|{\mathfrak{x}}^n(\xi)\|_V]d\xi\leqslant\\
+\leqslant C_1\|\pi^n\|_{\mathfrak{T}}+C_1\int\limits_0^t[\|\mathfrak{P}(\xi)\|_{H\to H}\|\dot{\mathfrak{x}}^n(\xi)\|_H + \|\mathfrak{Q}(\xi)\|_{V\to H}\|{\mathfrak{x}}^n(\xi)\|_V]d\xi,
+\end{gather*}
+где
+\begin{gather*}
+C_1\equiv\max\left\{\sqrt{[\sup\limits_{\tau\in[0,T]}\|\Phi(\tau)\|_{V\to V}]^2+[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi(\tau,\xi)\|_{H\to V}]^2},\|\Theta\|_{W^1_1([0,T],Y^*)\to{\textrm{Є}}{}([0,T];V,H)}\right\}.
+\end{gather*}
+Таким образом,
+\begin{gather}\label{norm.of(x.n(t)).in.V.estimate}
+\|\mathfrak{x}^n(t)\|_V\leqslant C_1\|\pi^n\|_{\mathfrak{T}}+C_1\int\limits_0^t[\|\mathfrak{P}(\xi)\|_{H\to H}\|\dot{\mathfrak{x}}^n(\xi)\|_H + \|\mathfrak{Q}(\xi)\|_{V\to H}\|{\mathfrak{x}}^n(\xi)\|_V]d\xi,\,\,\,t\in[0,T].
+\end{gather}
+
+Далее,
+\begin{gather*}
+\|\dot{\mathfrak{x}}^n(t)\|_H\leqslant[\sup\limits_{\tau\in[0,T]}\|\Phi'(\tau)\|_{V\to H}]\|v^n\|_V+[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi_t(\tau,\xi)\|_{H\to H}]\|h^n\|_H+ [\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi_t(\tau,\xi)\|_{H\to H}]\|f^n\|_{1,[0,T],H}+\\
++\|\Theta\|_{W^1_1([0,T],Y^*)\to{\textrm{Є}}{}([0,T];V,H)}\|\mathfrak{g}^n\|^{(1)}_{1,[0,T],Y^*}+[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi_t(\tau,\xi)\|_{H\to H}]\|\mu^n\|_{\mathbf{M}([0,T],H)}+\\
++[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi_t(\tau,\xi)\|_{H\to H}]\int\limits_0^t[\|\mathfrak{P}(\xi)\|_{H\to H}\|\dot{\mathfrak{x}}^n(\xi)\|_H + \|\mathfrak{Q}(\xi)\|_{V\to H}\|{\mathfrak{x}}^n(\xi)\|_V]d\xi\leqslant\\
+\leqslant\sqrt{[\sup\limits_{\tau\in[0,T]}\|\Phi'(\tau)\|_{V\to H}]^2+[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi_t(\tau,\xi)\|_{H\to H}]^2}\sqrt{\|v^n\|_V^2+\|h^n\|_H^2}\,+\\
++[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi_t(\tau,\xi)\|_{H\to V}][\|f^n\|_{1,[0,T],H}+\|\mu^n\|_{\mathbf{M}([0,T],H)}]+\|\Theta\|_{W^1_1([0,T],Y^*)\to{\textrm{Є}}{}([0,T];V,H)}\|\mathfrak{g}^n\|^{(1)}_{1,[0,T],Y^*}+\\
++[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi_t(\tau,\xi)\|_{H\to H}]\int\limits_0^t[\|\mathfrak{P}(\xi)\|_{H\to H}\|\dot{\mathfrak{x}}^n(\xi)\|_H + \|\mathfrak{Q}(\xi)\|_{V\to H}\|{\mathfrak{x}}^n(\xi)\|_V]d\xi\leqslant\\
+\leqslant C_2\|\pi^n\|_{\mathfrak{T}}+C_2\int\limits_0^t[\|\mathfrak{P}(\xi)\|_{H\to H}\|\dot{\mathfrak{x}}^n(\xi)\|_H + \|\mathfrak{Q}(\xi)\|_{V\to H}\|{\mathfrak{x}}^n(\xi)\|_V]d\xi,
+\end{gather*}
+где
+\begin{gather*}
+C_2\equiv\max\left\{\sqrt{[\sup\limits_{\tau\in[0,T]}\|\Phi'(\tau)\|_{V\to H}]^2+[\sup\limits_{(\tau,\xi)\in\Gamma}\|\Psi_t(\tau,\xi)\|_{H\to H}]^2},\|\Theta\|_{W^1_1([0,T],Y^*)\to{\textrm{Є}}{}([0,T];V,H)}\right\}.
+\end{gather*}
+Как следствие,
+\begin{gather}\label{norm.of(dot.x.n(t)).in.H.estimate}
+\|\dot{\mathfrak{x}}^n(t)\|_H\leqslant C_2\|\pi^n\|_{\mathfrak{T}}+C_2\int\limits_0^t[\|\mathfrak{P}(\xi)\|_{H\to H}\|\dot{\mathfrak{x}}^n(\xi)\|_H + \|\mathfrak{Q}(\xi)\|_{V\to H}\|{\mathfrak{x}}^n(\xi)\|_V]d\xi,\,\,\,t\in[0,T].
+\end{gather}
+
+Сложив неравенства~\eqref{norm.of(x.n(t)).in.V.estimate} и \eqref{norm.of(dot.x.n(t)).in.H.estimate}, будем иметь, что
+\begin{gather*}
+\|\mathfrak{x}^n(t)\|_V+\|\dot{\mathfrak{x}}^n(t)\|_H\leqslant C_3\|\pi^n\|_{\mathfrak{T}}+C_3\int\limits_0^t[\|\mathfrak{P}(\xi)\|_{H\to H}\|\dot{\mathfrak{x}}^n(\xi)\|_H + \|\mathfrak{Q}(\xi)\|_{V\to H}\|{\mathfrak{x}}^n(\xi)\|_V]d\xi,\,\,\,t\in[0,T],
+\end{gather*}
+где $C_3\equiv C_1+C_2$.
+
+Положив затем $\mathfrak{q}(\xi)\equiv\max\{\|\mathfrak{P}(\xi)\|_{H\to H},\|\mathfrak{Q}(\xi)\|_{V\to H}\}$, $\xi\in[0,T]$, и применяя затем лемму~\ref{Gronwall}, получим, что
+\begin{gather*}
+\|\mathfrak{x}^n(t)\|_V+\|\dot{\mathfrak{x}}^n(t)\|_H\leqslant C_3\|\pi^n\|_{\mathfrak{T}}\exp\left[C_3\|\mathfrak{q}\|_{1,[0,T]}\right],\,\,\,t\in[0,T].
+\end{gather*}
+Поэтому
+\begin{gather*}
+\|\mathfrak{x}^n\|_{{\textrm{Э}}{}([0,T];V,H)}\leqslant2C_3\|\pi^n\|_{\mathfrak{T}}\exp\left[C_3\|\mathfrak{q}\|_{1,[0,T]}\right].
+\end{gather*}
+Из данного неравенства и предельного соотношения~\eqref{(v.h.f.g.mu).convergence} вытекает, что
+\begin{gather*}
+\|\mathfrak{x}^n\|_{{\textrm{Э}}{}([0,T];V,H)}\to0,\,\,\,n\to\infty.
+\end{gather*}
+А это и означает, что отображение~\eqref{pi.mapsto.x.pi:mapping} непрерывно в нуле. Следовательно, отображение~\eqref{pi.mapsto.x.pi:mapping} является линейным непрерывным оператором, действующим из $\mathfrak{T}$ в
+${\textrm{Э}}{}([0,T];V,H)$. Поэтому и справедлива априорная оценка~\eqref{abstrChauchyprobeq:nonaut:Radon:a_priori_solution_estimate}. 
+
+Теорема полностью доказана.
 \end{Proof}
 
 
