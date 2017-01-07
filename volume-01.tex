@@ -10084,7 +10084,7 @@ h^N_{k\tau tt}(t,\tau)+\sum\limits_{m=1}^Nq_{km}(t)h^N_{m\tau}(t,\tau)=0,\\
 \label{thetaN_identity2:nonaut:parametric}
 \int\limits_\tau^T[-\langle\mathfrak{y}^{N}_t[\psi](t,\tau),{\eta}^{N}(t)\rangle+\langle\mathfrak{A}(t)\mathfrak{y}^{N}[\psi](t,\tau),\eta^{N}(t)\rangle+
 \langle\mathfrak{B}(t)\mathfrak{y}^{N}[\psi](t,\tau),\eta^{N}(t)\rangle+\\
-\notag+\langle\mathfrak{F}(t) \mathfrak{G}\mathfrak{y}^{N}[\psi](t,\tau), \mathfrak{G}\eta^{N}(t)\rangle_Z]dt=\langle\psi^{N},\eta^{N}(\tau)\rangle,\,\,\,\forall\,\eta^N\in\mathfrak{K}^T_{T}[\tau,T];\,\,\,
+\notag+\langle\mathfrak{F}(t) \mathfrak{G}\mathfrak{y}^{N}[\psi](t,\tau), \mathfrak{G}\eta^{N}(t)\rangle_Z]dt=\langle\psi^{N},\eta^{N}(\tau)\rangle,\,\,\,\forall\,\eta^N\in\mathfrak{K}^N_{T}[\tau,T];\,\,\,
 \mathfrak{y}^{N}[\psi]|_{t=\tau}=0.
 \end{gather}
 Произвольно выберем и зафиксируем $\tau_1$, $\tau_2\in[0,T]$. Ввиду неравенства~\eqref{thetaN_energetic_estimate:nonaut:parametric} и  теоремы~\ref{V1120QTcompactness:abstract} заключаем, что найдутся подпоследовательность ${N_m}$, $m=1,2,\dots$, последовательности $N=1,2,\dots$, и функции $\mathfrak{y}^-(\cdot,\tau_i)\in \textrm{Э}([0,\tau_i];V,H)$, $\mathfrak{y}^+(\cdot,\tau_i)\in \textrm{Э}([\tau_i,T];V,H)$,  $\mathfrak{y}^*(\cdot,\tau_i)\in \textrm{Э}([0,T];V,H)$, $i=1,2$, такие, что
@@ -10665,7 +10665,7 @@ $$
 
 \item конечны величины
 \begin{gather*}
-c_4\equiv\int\limits_0^T\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limits_0^T\|\mathfrak{Q}(t)\|_{V\to H}dt.
+c_4\equiv\vraisup\limits_{t\in[0,T]}\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limits_0^T\|\mathfrak{Q}(t)\|_{V\to H}dt.
 \end{gather*}
 \end{enumerate}
 } 
@@ -10673,30 +10673,235 @@ c_4\equiv\int\limits_0^T\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limit
 \item $\psi\in C([0,T],H)$, $f\in C([0,T],L_1([0,T],H))$, $\mu\in\mathbf{M}[0,T]$.
 \end{enumerate}
 
-%Пусть $\varphi\in V$, $\psi\in H$, $f\in L_1([0,T],H)$, $\mathfrak{g}\in W^1_1([0,T], Y^*)$, $\mu\in\mathbf{M}([0,T],H)$ --- фиксированы.
-%
-%Пусть, кроме того,
-%\begin{enumerate}
-%\item
-%\end{enumerate}
-%
-%Рассмотрим задачу Коши
-%\begin{gather}\label{abstrChauchyprobeq:nonaut:Radon}
-%\ddot{\mathfrak{x}}(t)+\mathfrak{A}(t){\mathfrak{x}}(t)+\mathfrak{B}(t){\mathfrak{x}}(t) + \mathfrak{P}(t)\dot{\mathfrak{x}}(t) + \mathfrak{Q}(t){\mathfrak{x}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}(t) = f(t) + \mathfrak{C}^*\mathfrak{g}(t)+\mu(dt),\,\,\,t\in[0,T],\\
-%\label{abstrChauchyprobinitcond:nonaut:Radon}
-%{\mathfrak{x}}(T)=\varphi,\,\,\,\dot{\mathfrak{x}}(T)=\psi,
-%\end{gather}
-%и дадим следующее
-%\begin{Definition}\label{SolutionDef1:nonaut:Radon} Функцию ${\mathfrak{z}}\in{\textrm{Э}}([0,T];V,H)$ назовём решением задачи Коши~(\ref{abstrChauchyprobeq:nonaut:Radon}),
-%(\ref{abstrChauchyprobinitcond:nonaut:Radon}), если
-%\begin{gather}\label{defsolabstrChauchyprob1:nonaut:Radon}
-%\int\limits_0^T[-\langle\dot{\mathfrak{x}}(t),\dot{\eta}(t)\rangle_H+\langle \mathfrak{A}(t){\mathfrak{x}}(t),\eta(t)\rangle+\langle\mathfrak{P}(t)\dot{\mathfrak{x}}(t),\eta(t)\rangle_H+ \langle \mathfrak{B}(t){\mathfrak{x}}(t),\eta(t)\rangle + \langle\mathfrak{Q}(t){\mathfrak{x}}(t),\eta(t)\rangle_H + \\
-%+\langle \mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}(t),\mathfrak{G}\eta(t)\rangle_Z]dt+\langle\psi,\eta(T)\rangle_H=\notag\int\limits_0^T\langle f(t),\eta(t)\rangle_Hdt +\int\limits_0^T\langle{\mathfrak{g}}(t), \mathfrak{C}\eta(t)\rangle\,dt+\\
-%+\int\limits_{[0,T]}\langle\eta(t),\mu(dt)\rangle_H\,\,\,\forall\,{\eta}\in\hat{\textrm{Э}}{}([0,T];V,H);\,\,\,\notag \mathfrak{x}(T)=\varphi.
-%\end{gather}
-%\end{Definition}
+
+\begin{Theorem}\label{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!theorem.theta.cont}
+Справедливо включение $\theta[\psi,f]\in C([0,T],{\textrm{Є}}([0,T];V,H))$, понимаемое в том смысле, что функция
+\begin{gather*}
+[0,T]\ni \tau\mapsto\theta[\psi,f](\cdot,\tau)\in{\textrm{Є}}([0,T];V,H)
+\end{gather*}
+непрерывна на отрезке $[0,T]$ в смысле нормы пространства ${\textrm{Є}}([0,T];V,H)$. При этом найдётся постоянная $\varkappa_5>0$, зависящая лишь от $T$, $c_1$, $c_2$, $c_3$, $c_4$, $c_5>0$ и от $\|\mathfrak{G}\|_{V\to Z}$, такая, что
+\begin{gather}\label{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!theorem.theta.cont!apriori.estimate}
+\max\limits_{\tau\in[0,T]}\|\theta[\psi,f](\cdot,\tau)\|_{{\textrm{Є}}([0,T];V,H)}\leqslant\varkappa_5[\pmb{|}\psi\pmb{|}^{(0)}_{[0,T],H}+\max\limits_{\tau\in[0,T]}\|f(\cdot,\tau)\|_{1,[0,T],H}].
+\end{gather}
+\end{Theorem}
+\begin{Proof}
+1) Прежде всего отметим, что, в силу теоремы~\ref{abstrChauchyprobeq:nonaut:nonlinear!theorem}, функция $\theta[\psi,f]](\cdot,\tau)$ 
+однозначно определяется на $[0,T]$, при всех $\tau\in[0,T]$ справедливо включение $\theta[\psi,f](\cdot,\tau)\in{\textrm{Э}}([0,T];V,H)$, и найдётся константа 
+$\varkappa_4>0$, зависящая лишь от $T$, $c_1$, $c_2$, $c_3$, $c_4$, $c_5>0$ и от $\|\mathfrak{G}\|_{V\to Z}$, такая, что
+\begin{gather*}
+\sup\limits_{t\in[0,\tau]}\|\theta[\psi,f](t,\tau)\|_{V}+\vraisup\limits_{t\in[0,\tau]}\|\theta_t[\psi,f](t,\tau)\|_{H}\leqslant\varkappa_4[\|\psi(\tau)\|_H+\|f(\cdot,\tau)\|_{1,[0,T],H}]\leqslant\\
+\leqslant\varkappa_4[\sup\limits_{\xi\in[0,T]}\|\psi(\xi)\|_H+\sup\limits_{\xi\in[0,T]}\|f(\cdot,\xi)\|_{1,[0,T],H}]\\
+\sup\limits_{t\in[\tau,T]}\|\theta[\psi,f](t,\tau)\|_{V}+\vraisup\limits_{t\in[\tau,T]}\|\theta_t[\psi,f](t,\tau)\|_{H}\leqslant\varkappa_4[\|\psi(\tau)\|_H+\|f(\cdot,\tau)\|_{1,[0,T],H}]\leqslant\\
+\leqslant\varkappa_4[\sup\limits_{\xi\in[0,T]}\|\psi(\xi)\|_H+\sup\limits_{\xi\in[0,T]}\|f(\cdot,\xi)\|_{1,[0,T],H}].
+\end{gather*}
+Следовательно,
+\begin{gather}\label{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!theorem.theta.cont:auxiliary_a_priori_estimate}
+\sup\limits_{\tau\in[0,T]}\|\theta[\psi,f](\cdot,\tau)\|_{\textrm{Э}([0,T];V,H)}\leqslant2\varkappa_4[\pmb{|}\psi\pmb{|}^{(0)}_{[0,T],H}+\max\limits_{\tau\in[0,T]}\|f(\cdot,\tau)\|_{1,[0,T],H}].
+\end{gather}
+Заметим также, что $\theta[\psi,f]$ линейно зависит от $\psi\in C([0,T],H)$, $f\in C([0,T],L_1([0,T],H))$.
+
+2) Докажем теперь включение $\theta[\psi,f]\in C([0,T],\textrm{Э}([0,T];V,H))$. Для этого воспользуемся методом Галёркина. Предположим сначала, что $\psi\in C^1([0,T],V)$, $f\in C^1(\Gamma,V)$. Пусть
+\begin{gather*}
+\psi^N(\tau)\equiv\sum\limits_{m=1}^N\psi_m(\tau)e_m,\,\,\,f^N(t,\tau)\equiv\sum\limits_{m=1}^Nf_m(t,\tau)e_m,\,\,\,\psi_j(\tau)\equiv\langle\psi(\tau),e_j\rangle_H,\,\,\,f_j(t,\tau)\equiv\langle f(t,\tau),e_j\rangle_H,\\
+j,\,N=1,2,\dots,\,\,\,(t,\tau)\in\Gamma.
+\end{gather*}
+Тогда, в силу леммы~\ref{CkVH_approx},
+\begin{gather}\label{psiN_fN_convergence:nonaut:parametric}
+\lim\limits_{N\to\infty}\pmb{|}\psi^N-\psi\pmb{|}^{(1)}_{[0,T],V}=0,\,\,\,\lim\limits_{N\to\infty}\pmb{|}f^N-f\pmb{|}^{(1)}_{\Gamma,V}=0.
+\end{gather}
+Будем искать приближение $\theta^N[\psi,f]$ к функции $\theta[\psi,f]$ в виде
+\begin{gather*}
+\theta^N[\psi,f](t,\tau)\equiv\sum\limits_{k=1}^Nh^N_k(t,\tau)e_k,
+\end{gather*}
+где набор функций $h^N_k$, $k=\overline{1,N}$, является решением задачи Коши
+\begin{gather}\label{hNkttau_Cauchy:theta}
+h^N_{ktt}(t,\tau)+\sum\limits_{m=1}^N[\mathfrak{p}_{km}(t)h^N_{mt}(t,\tau)+\mathfrak{q}_{km}(t)h^N_{m}(t,\tau)]=f_k(t,\tau),\\
+\notag h^N_k(t,\tau)|_{t=\tau}=0,\,\,\,h^N_{kt}(t,\tau)|_{t=\tau}=\psi_k(\tau),\,\,\,k=\overline{1,N},
+\end{gather}
+в которой
+\begin{gather*}
+\mathfrak{p}_{km}(t)\equiv\langle\mathfrak{P}(t)e_m,e_k\rangle_H,\,\,\,\mathfrak{q}_{km}(t)\equiv\langle\mathfrak{A}(t)e_m+\mathfrak{B}(t)e_m,e_k\rangle+\langle\mathfrak{Q}(t)e_m,e_k\rangle_H+
+\langle\mathfrak{F}(t)\mathfrak{G}e_m,\mathfrak{G}e_k\rangle_Z.
+\end{gather*}
+Согласно лемме \ref{sec:aux_results:ODE2:yCauchy:unique_existence}, существует единственный набор функций $h_k^N$, $k=\overline{1,N}$, непрерывных на $\Gamma$ и имеющих на $\Gamma$
+непрерывные производные $h^N_{kt}$, $h^N_{k\tau}$, $h^N_{ktt}$, $h^N_{kt\tau}$, $h^N_{k\tau t}$, $k=\overline{1,N}$, являющийся решением задачи Коши (\ref{hNkttau_Cauchy:theta}).
+Кроме того, производные $h^N_{k\tau tt}$, $k=\overline{1,N}$, также существуют и непрерывны на $\Gamma$, а набор функций $h_{k\tau}^N$, $k=\overline{1,N}$, является решением задачи Коши
+\begin{gather}\label{hN_tau_kttau_Cauchy:theta}
+h^N_{k\tau tt}(t,\tau)+\sum\limits_{m=1}^N[p_{km}(t)h^N_{m\tau t}(t,\tau)+q_{km}(t)h^N_{m\tau}(t,\tau)]=f_{k\tau}(t,\tau),\\
+\notag h^N_{k\tau}(t,\tau)|_{t=\tau}=-\psi_k(\tau),\,\,\,h^N_{k\tau t}(t,\tau)|_{t=\tau}=\psi_k'(\tau)+\sum\limits_{m=1}^Np_{km}(\tau)\psi_m(\tau)+ f_k(\tau,\tau),\,\,\,k=\overline{1,N}.
+\end{gather}
+Как следствие, для функций $\theta^N[\psi,f]$ и $\xi^N[\psi,f]\equiv\theta^N_\tau[\psi,f]$ справедливы тождества
+\begin{gather}
+\label{thetaN_identity:nonaut:parametric:non-homo}
+\langle\theta^{N}_{tt}[\psi,f](t,\tau),e_k\rangle + \langle\mathfrak{A}(t)\theta^{N}[\psi,f](t,\tau)+\mathfrak{B}(t)\theta^{N}[\psi,f](t,\tau),e_k\rangle+\\
+\notag+\langle \mathfrak{P}(t)\theta^{N}_t[\psi,f](t,\tau)+\mathfrak{Q}(t)\theta^{N}[\psi,f](t,\tau),e_k\rangle_H+\langle\mathfrak{F}(t) \mathfrak{G}\theta^{N}[\psi,f](t,\tau), \mathfrak{G}e_k\rangle_Z=\langle f(t,\tau),e_k\rangle_H,\\
+\notag\theta^{N}[\psi,f]|_{t=\tau}=0,\,\,\,\theta^{N}_t[\psi,f]|_{t=\tau}=\psi^{N}(\tau),\,\,\,k=\overline{1,N},\,\,\,(t,\tau)\in\Gamma;\\
+\label{xiN_identity:nonaut:parametric:non-homo}
+\langle\xi^{N}_{tt}[\psi,f](t,\tau),e_k\rangle + \langle\mathfrak{A}(t)\xi^{N}[\psi,f](t,\tau)+\mathfrak{B}(t)\xi^{N}[\psi,f](t,\tau),e_k\rangle+\\
+\notag+\langle \mathfrak{P}(t)\xi^{N}_t[\psi,f](t,\tau)+\mathfrak{Q}(t)\xi^{N}[\psi,f](t,\tau),e_k\rangle_H+\langle\mathfrak{F}(t) \mathfrak{G}\xi^{N}[\psi,f](t,\tau), \mathfrak{G}e_k\rangle_Z=\langle f_\tau(t,\tau),e_k\rangle_H,\\
+\notag\xi^N[\psi,f]|_{t=\tau}=-\psi^N(\tau),\,\,\,\xi^N_t[\psi,\tau]|_{t=\tau}=\dot{\psi}^N(\tau)+\mathfrak{P}(\tau)\psi^N(\tau)+f^N(\tau,\tau),\,\,\,k=\overline{1,N},\,\,\,(t,\tau)\in\Gamma.
+\end{gather}
+Рассуждая затем подобно тому, как это делалось при выводе оценки~\eqref{sec:more.more.abstract:zNnorm_estimate}, заключаем, что
+\begin{gather*}
+\|\theta^{N}[\psi,f](\cdot,\tau)\|_{\textrm{Э}([0,T]; V,H)}\leqslant C[\|\psi^N(\tau)\|_H+\|f(\cdot,\tau)\|_{1,[0,T],H}],\\
+\|\xi^N[\psi,f](\cdot,\tau)\|_{\textrm{Э}([0,T]; V,H)}\leqslant C[\|\psi^N(\tau)\|_V+\|\dot{\psi}^N(\tau)+\mathfrak{P}(\tau)\psi^N(\tau)+f^N(\tau,\tau)\|_H+\|f_\tau(\cdot,\tau)\|_{1,[0,T],H}],
+\end{gather*}
+где постоянная $C>0$ определяется лишь числами $T$, $c_1$, $c_2$, $c_3$, $c_4$, $c_5>0$ и $\|\mathfrak{G}\|_{V\to Z}$.
+
+Пользуясь условиями на исходные данные, выводим, что
+\begin{gather*}
+\|\xi^N[\psi,f](\cdot,\tau)\|_{\textrm{Э}([0,T]; V,H)}\leqslant C[\|\psi^N(\tau)\|_V+\|\dot{\psi}^N(\tau)+\mathfrak{P}(\tau)\psi^N(\tau)+f^N(\tau,\tau)\|_H+\|f_\tau(\cdot,\tau)\|_{1,[0,T],H}]\leqslant\\
+\leqslant C[\|\psi^N(\tau)\|_V+\|\dot{\psi}^N(\tau)\|_H+c_4\|\psi^N(\tau)\|_H+\|f^N(\tau,\tau)\|_H+T\pmb{|}f_\tau\pmb{|}^{(0)}_{\Gamma,H}]\leqslant C'[\pmb{|}\psi^N\pmb{|}^{(1)}_{[0,T],V}+\pmb{|}f\pmb{|}^{(1)}_{\Gamma,H}].
+\end{gather*}
+
+Итак,
+\begin{gather*}
+\|\theta^N[\psi,f](\cdot,\tau)\|_{\textrm{Э}([0,T]; V,H)}\leqslant C_1[\pmb{|}\psi^N\pmb{|}_{[0,T],H}^{(0)}+\pmb{|}f\pmb{|}^{(0)}_{[0,T],L_1([0,T],H)}],\\
+\|\xi^N[\psi,f](\cdot,\tau)\|_{\textrm{Э}([0,T]; V,H)}\leqslant C_1[ \pmb{|}\psi^N\pmb{|}_{[0,T],V}^{(1)}+\pmb{|}f\pmb{|}^{(1)}_{\Gamma,H}],
+\end{gather*}
+где $C_1>0$ --- некоторая не зависящая от $N$ положительная постоянная. Следовательно, при всех $\tau_1$, $\tau_2\in[0,T]$
+\begin{gather*}
+\|\theta^N[\psi,f](\cdot,\tau_1)-\theta^N[\psi,f](\cdot,\tau_2)\|_{\textrm{Э}([0,T]; V,H)}= {\biggl\|}\sum\limits_{m=1}^Nh^N_m(\cdot,\tau_1)e_m-\sum\limits_{m=1}^Nh^N_m(\cdot,\tau_2)e_m{\biggr\|}_{\textrm{Э}([0,T]; V,H)}=\\
+=\biggl\|\sum\limits_{m=1}^N[h^N_m(\cdot,\tau_1)-h^N_m(\cdot,\tau_2)]e_m{\biggr\|}_{\textrm{Э}([0,T]; V,H)} =
+\biggl\|\sum\limits_{m=1}^N\int\limits_{\tau_2}^{\tau_1}h^N_{m\tau}(\cdot,\tau)e_md\tau{\biggr\|}_{\textrm{Э}([0,T]; V,H)}=\\
+=\biggl\|\int\limits_{\tau_2}^{\tau_1}\sum\limits_{m=1}^Nh^N_{m\tau}(\cdot,\tau)e_md\tau{\biggr\|}_{\textrm{Э}([0,T]; V,H)}=
+{\biggl\|}\int\limits_{\tau_2}^{\tau_1}\xi^N[\psi,f](\cdot,\tau)d\tau{\biggr\|}_{\textrm{Э}([0,T]; V,H)}\leqslant\\
+\leqslant\left|\int\limits_{\tau_2}^{\tau_1}{\|}\xi^N[\psi](\cdot,\tau){\|}_{\textrm{Э}([0,T]; V,H)}d\tau\right|\leqslant C_1|\tau_1-\tau_2|[ \pmb{|}\psi^N\pmb{|}_{[0,T],V}^{(1)}+\pmb{|}f\pmb{|}^{(1)}_{\Gamma,H}].
+\end{gather*}
+Таким образом, при всех $\tau$, $\tau_1$, $\tau_2\in[0,T]$,
+\begin{gather}
+\label{thetaN_energetic_estimate:nonaut:parametric:non-homo}
+\|\theta^N[\psi,f](\cdot,\tau)\|_{\textrm{Э}([0,T]; V,H)}\leqslant C_1[\pmb{|}\psi\pmb{|}_{[0,T],H}^{(0)}+\pmb{|}f\pmb{|}^{(0)}_{[0,T],L_1([0,T],H)}],\\
+\label{thetaN_difference_energetic_estimate:nonaut:parametric:non-homo}
+\|\theta^N[\psi,f](\cdot,\tau_1)-\theta^N[\psi,f](\cdot,\tau_2)\|_{\textrm{Э}([0,T]; V,H)}\leqslant C_1|\tau_1-\tau_2|[ \pmb{|}\psi\pmb{|}_{[0,T],V}^{(1)}+\pmb{|}f\pmb{|}^{(1)}_{\Gamma,H}].
+\end{gather}
+
+Рассуждая как при получении тождества~\eqref{sec:more.more.abstract:zNm_identity}, заключаем, что
+\begin{gather}
+\label{thetaN_identity1:nonaut:parametric:non-homo}
+\int\limits_0^\tau[-\langle\theta^{N}_t[\psi,f](t,\tau),{\eta}^{N}(t)\rangle+\langle\mathfrak{A}(t)\theta^{N}[\psi,f](t,\tau),\eta^{N}(t)\rangle+
+\langle\mathfrak{B}(t)\theta^{N}[\psi,f](t,\tau),\eta^{N}(t)\rangle+\\
+\notag+\langle\mathfrak{P}(t)\theta^{N}_t[\psi,f](t,\tau)+\mathfrak{Q}(t)\theta^{N}[\psi,f](t,\tau),\eta^N(t)\rangle_H+\langle\mathfrak{F}(t) \mathfrak{G}\theta^{N}[\psi,f](t,\tau), \mathfrak{G}\eta^{N}(t)\rangle_Z]dt=\\
+\notag=\int\limits_0^\tau\langle f(t,\tau),\eta^N(t)\rangle_Hdt-\langle\psi^{N}(\tau),\eta^{N}(\tau)\rangle_H,\,\,\,\forall\,\eta^N\in\mathfrak{K}^N_{0}[0,\tau];\,\,\,
+\theta^{N}[\psi,f]|_{t=\tau}=0;\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{thetaN_identity2:nonaut:parametric:non-homo}
+\int\limits_\tau^T[-\langle\theta^{N}_t[\psi,f](t,\tau),{\eta}^{N}(t)\rangle+\langle\mathfrak{A}(t)\theta^{N}[\psi,f](t,\tau),\eta^{N}(t)\rangle+
+\langle\mathfrak{B}(t)\theta^{N}[\psi,f](t,\tau),\eta^{N}(t)\rangle+\\
+\notag+\langle\mathfrak{P}(t)\theta^{N}_t[\psi,f](t,\tau)+\mathfrak{Q}(t)\theta^{N}[\psi,f](t,\tau),\eta^N(t)\rangle_H+\langle\mathfrak{F}(t) \mathfrak{G}\theta^{N}[\psi,f](t,\tau), \mathfrak{G}\eta^{N}(t)\rangle_Z]dt=\\
+\notag=\int\limits_\tau^T\langle f(t,\tau),\eta^N(t)\rangle_Hdt+\langle\psi^{N}(\tau),\eta^{N}(\tau)\rangle_H,\,\,\,\forall\,\eta^N\in\mathfrak{K}^N_{T}[\tau,T];\,\,\,
+\theta^{N}[\psi,f]|_{t=\tau}=0.
+\end{gather}
+Произвольно выберем и зафиксируем $\tau_1$, $\tau_2\in[0,T]$. Ввиду неравенства~\eqref{thetaN_energetic_estimate:nonaut:parametric:non-homo} и  теоремы~\ref{V1120QTcompactness:abstract} заключаем, что найдутся подпоследовательность ${N_m}$, $m=1,2,\dots$, последовательности $N=1,2,\dots$, и функции $\theta^-(\cdot,\tau_i)\in \textrm{Э}([0,\tau_i];V,H)$, $\theta^+(\cdot,\tau_i)\in \textrm{Э}([\tau_i,T];V,H)$,  $\theta^*(\cdot,\tau_i)\in \textrm{Э}([0,T];V,H)$, $i=1,2$, такие, что
+\begin{gather}
+\label{thetaN_convergence:nonaut:parametric:non-homo}
+\lim\limits_{m\to\infty}\max\limits_{t\in[0,\tau_i]}\|\theta^{N_m}[\psi,f](t,\tau_i)-\theta^-(t,\tau_i)\|_{H}=0,\,\,\,
+\lim\limits_{m\to\infty}\max\limits_{t\in[\tau_i,T]}\|\theta^{N_m}[\psi](t,\tau_i)-\theta^+(t,\tau_i)\|_{H}=0, \\
+\notag\theta^{N_m}[\psi,f](\cdot,\tau_i)\to\theta^-(\cdot,\tau_i),\,\,\,m\to\infty,\,\,\,\mbox{слабо в $\mathcal{W}^1_2([0,\tau_i];V,H)$},%\\
+\end{gather}
+\begin{gather}
+\notag\theta^{N_m}[\psi,f](\cdot,\tau_i)\to\theta^+(\cdot,\tau_i),\,\,\,m\to\infty,\,\,\,\mbox{слабо в $\mathcal{W}^1_2([\tau_i,T];V,H)$},\\
+\notag\theta^{N_m}[\psi,f](\cdot,\tau_i)\to\theta^-(\cdot,\tau_i),\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([0,\tau_i],V)$},\\
+\notag\theta^{N_m}[\psi,f](\cdot,\tau_i)\to\theta^+(\cdot,\tau_i),\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([\tau_i,T],V)$},\\
+\notag\theta^{N_m}_t[\psi,f](\cdot,\tau_i)\to\theta^-_t(\cdot,\tau_i),\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([0,\tau_i],H)$},\\
+\notag\theta^{N_m}_t[\psi,f](\cdot,\tau_i)\to\theta^+_t(\cdot,\tau_i),\,\,\,m\to\infty,\,\,\,\mbox{$*$--слабо в $L_\infty([\tau_i,T],H)$},\\
+\notag\theta^{N_m}[\psi,f](\cdot,\tau_i)\to\theta^*(\cdot,\tau_i),\,\,\,m\to\infty,\,\,\,\mbox{слабо в $\mathcal{W}^1_2([0,T];V,H)$}, \\
+\notag\lim\limits_{m\to\infty}\max\limits_{t\in[0,\tau_i]}
+\|\mathfrak{G}[\theta^{N_m}[\psi,f](\cdot,\tau_i)]-\mathfrak{G}[\theta^-(t,\tau_i)]\|_{Z}=0,\\
+\notag\lim\limits_{m\to\infty}\max\limits_{t\in[\tau_i,T]}
+\|\mathfrak{G}[\theta^{N_m}[\psi,f](\cdot,\tau_i)]-\mathfrak{G}[\theta^+(t,\tau_i)]\|_{Z}=0,\,\,\,\notag i=1,\,2.
+\end{gather}
+Переходя к пределу при $m\to\infty$ в (\ref{thetaN_identity1:nonaut:parametric:non-homo}) и (\ref{thetaN_identity2:nonaut:parametric:non-homo}) с $N=N_m$, $\tau=\tau_i$, $i=1,2$, получим, что $\theta^*(\cdot,\tau_i)\equiv\theta[\psi, f](\cdot,\tau_i)$, $\theta^-(\cdot,\tau_i)\equiv\theta[\psi,f](\cdot,\tau_i)|_{[0,\tau_i]}$, $\theta^+(\cdot,\tau_i)\equiv\theta[\psi,f](\cdot,\tau_i)|_{[\tau_i,T]}$, $i=1,\,2$.
+
+Используя предельные соотношения~(\ref{thetaN_convergence:nonaut:parametric:non-homo}), теорему~\ref{V1120QTcompactness:abstract}, и неравенство~\eqref{thetaN_difference_energetic_estimate:nonaut:parametric:non-homo},  заключаем, что
+\begin{gather}
+\label{theta_difference_energetic_estimate:nonaut:parametric:non-homo}
+\|\theta[\psi,f](\cdot,\tau_1)-\theta[\psi,f](\cdot,\tau_2)\|_{\textrm{Э}([0,T]; V,H)}\leqslant C_1|\tau_1-\tau_2|[ \pmb{|}\psi\pmb{|}_{[0,T],V}^{(1)}+\pmb{|}f\pmb{|}^{(1)}_{\Gamma,H}]\,\,\,\forall\,\tau_1,\,\,\,\tau_2\in[0,T].
+\end{gather}
+
+Итак, для случая $\psi\in C^1([0,T],V)$, $f\in C^1(\Gamma,V)$ включение $\theta[\psi,f]\in C([0,T],\textrm{Э}([0,T]; V,H))$ доказано.
+
+Пусть теперь $\psi\in C([0,T],H)$,  $f\in C([0,T],L_{1}([0,T],H))$. Тогда, на основании леммы~\ref{CkVH_approx}, найдутся последовательности $\psi_m \in C^1([0,T],V)$, $f_m\in C^1(\Gamma,V)$, $m=1,2,\dots$, такие, что
+\begin{gather}\label{psif_approx:non-homo}
+\lim\limits_{m\to\infty}\pmb{|}\psi_m-\psi\pmb{|}^{(0)}_{[0,T],H}=0,\,\,\,\lim\limits_{m\to\infty}\pmb{|}f_m-f\pmb{|}^{(0)}_{[0,T],L_{1}([0,T],H)}=0.
+\end{gather}
+Из неравенства (\ref{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!theorem.theta.cont:auxiliary_a_priori_estimate}) и упомянутой выше линейной зависимости $\theta[\psi,f]$ от $\psi$ и $f$ выводим, что
+\begin{gather*}
+\max\limits_{\tau\in[0,T]}{\|}\theta[\psi_m,f_m](\cdot,\tau)-\theta[\psi_k,f_k](\cdot,\tau){\|}_{\textrm{Э}([0,T]; V,H)}\leqslant 2\varkappa_4[\pmb{|}\psi_m-\psi_k\pmb{|}^{(0)}_{[0,T],H}+\pmb{|}f_m-f_k\pmb{|}^{(0)}_{[0,T],L_1([0,T],H)}],\\
+m,\,\,k=1,2,\dots
+\end{gather*}
+В силу (\ref{psif_approx:non-homo}) это означает, что последовательность $\theta[\psi_m,f_m]$, $m=1,2,\dots$, фундаментальна в банаховом пространстве $C([0,T],\textrm{Э}([0,T]; V,H))$.
+Поэтому найдётся функция $\bar\theta[\psi,f]\in C([0,T],\textrm{Э}([0,T]; V,H))$, для которой $\lim\limits_{m\to\infty}\pmb{|}\theta[\psi_m,f_m]-\bar\theta[\psi,f]\pmb{|}^{(0)}_{[0,T],\textrm{Э}([0,T]; V,H)}=0$. Пользуясь последним равенством и определением функции $\theta[\psi,f]$, заключаем, что $\bar\theta[\psi,f]\equiv
+\theta[\psi,f]$, и, следовательно, $\theta[\psi,f]$ непрерывна по $\tau\in[0,T]$ в метрике пространства $\textrm{Э}([0,T]; V,H)$ также и для $\psi\in C([0,T],H)$, $f\in
+C([0,T],L_1([0,T],H))$. Итак, доказано, что для всех $\psi\in C([0,T],H)$,  $f\in C([0,T],L_1([0,T],H))$ имеет место включение $\theta[\psi,f]\in C([0,T],\textrm{Э}([0,T]; V,H))$.
+
+3) Докажем включение $\mathfrak{y}[\psi]\in C([0,T],\textrm{Є}([0,T];V,H))$. В самом деле, на основании теоремы~\ref{abstrChauchyprobeq:nonaut:nonlinear!theorem}, при всех $\tau\in[0,T]$ справедливо включение $\theta[\psi,f](\cdot,\tau)\in \textrm{Є}([0,T];V,H))$. Кроме того, из доказанного во второй части данного доказательства включения $\theta[\psi,f]\in C([0,T],\textrm{Э}([0,T];V,H))$ следует, что для всех $\tau$ и $\tau'\in[0,T]$
+\begin{gather*}
+\|\theta[\psi,f](\cdot,\tau')-\theta[\psi,f](\cdot,\tau)\|_{\textrm{Є}([0,T];V,H)}=\\
+=\sup\limits_{t\in[0,T]}\biggl[\|\theta[\psi,f](t,\tau')-\theta[\psi,f](t,\tau)\|_V^2+\|\theta_t[\psi,f](t,\tau')-\theta_t[\psi,f](t,\tau)\|_H^2\biggr]^{\frac12}\leqslant\\
+\leqslant\|\theta[\psi,f](\cdot,\tau')-\theta[\psi,f](\cdot,\tau)\|_{\textrm{Э}([0,T];V,H)}.
+\end{gather*}
+Таким образом,
+\begin{gather}\label{EErevnorms:nonaut:parametric:non-homo}
+\|\theta[\psi,f](\cdot,\tau')-\theta[\psi,f](\cdot,\tau)\|_{\textrm{Є}([0,T];V,H)}\leqslant\|\theta[\psi,f](\cdot,\tau')-\theta[\psi,f](\cdot,\tau)\|_{\textrm{Э}([0,T];V,H)}.
+\end{gather}
+Из данного неравенства и ранее доказанного включения $\theta[\psi,f]\in C([0,T],\textrm{Э}([0,T];V,H))$ и следует включение $\theta[\psi,f]\in C([0,T],\textrm{Є}([0,T];V,H))$.
+
+4) Априорная оценка~\eqref{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!theorem.theta.cont!apriori.estimate} является следствием неравенств 
+\eqref{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!theorem.theta.cont:auxiliary_a_priori_estimate} и \eqref{EErevnorms:nonaut:parametric:non-homo}. Теорема полностью доказана.
+\end{Proof}
 
 
+
+Для всех  $t_1$, $t_2\in[0,T]$, $t_1<t_2$, через $\mathfrak{K}^N[t_1,t_2]$ обозначим множество функций вида
+\begin{gather*}
+(x,t)\ni Q_{[t_1,t_2]}\mapsto\sum\limits_{m=1}^Nw_m(t)g_m(x),
+\end{gather*}
+где $w_m\in C^\infty[t_1,t_2]$, $m=\overline{1,N}$. Положим $\mathfrak{K}^N_{t_1}[t_1,t_2]\equiv\{\eta\in\mathfrak{K}^N[t_1,t_2]:\eta(x,t_1)=0\mbox{ при п.в. $x\in\Omega$}\}$,
+$\mathfrak{K}^N_{t_2}[t_1,t_2]\equiv\{\eta\in\mathfrak{K}^N[t_1,t_2]:\eta(x,t_2)=0\mbox{ при п.в. $x\in\Omega$}\}$, $\mathfrak{K}^N\equiv\mathfrak{K}^N[0,T]$, $\mathfrak{K}^N_0\equiv
+\mathfrak{K}^N_0[0,T]$, $\mathfrak{K}^N_T\equiv\mathfrak{K}^N_T[0,T]$.
+
+\begin{Lemma}\label{W120QT_approximation:third2[n>1]}
+Пусть $\eta_1$, $\eta_2\in W^1_{2}(Q_{[t_1,t_2]})$, причём $\eta_1(\cdot,t_1)=\eta_2(\cdot,t_2)= 0$. Тогда существуют последовательности $\eta^N_1\in\mathfrak{K}^N_{t_1}[t_1,t_2]$,
+$\eta^N_2\in\mathfrak{K}^N_{t_2}[t_1,t_2]$, $N=1,2,\dots$, такие, что
+\begin{gather*}
+\lim\limits_{N\to\infty}\|\eta^N_1-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}}=0,\,\,\,\lim\limits_{N\to\infty}\|\eta^N_2-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}=0.
+\end{gather*}
+\end{Lemma}
+\begin{Proof}
+Поскольку $C^\infty(Q_{[t_1,t_2]})$ всюду плотно в $W^1_{2}(Q_{[t_1,t_2]})$, то
+\begin{gather*}
+\forall\,\delta>0\,\,\exists\,\eta_{1\delta},\,\,\eta_{2\delta}\in C^{\infty}(Q_T),\,\,\eta_{1\delta}(x,t_1)=\eta_{2\delta}(x,t_2)=0,\,\,\,x\in\Omega:\\
+\max\{\|\eta_{1\delta}-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}},\|\eta_{2\delta}-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}\} \leqslant\frac{\delta}{2}.
+\end{gather*}
+На основании леммы \ref{Cinfty0Qt1t2_convergence:third2[n>1]}
+\begin{gather*}
+\exists\,N_0(\delta)\,\,\forall\,N\geqslant N_0(\delta):\max\left\{\left\|\eta_{1\delta}-\sum\limits_{m=1}^N\eta_{1\delta,m}(t)g_m\right\|^{(1)}_{2,Q_{[t_1,t_2]}},
+\left\|\eta_{2\delta}-\sum\limits_{m=1}^N\eta_{2\delta,m}(t)g_m\right\|^{(1)}_{2,Q_{[t_1,t_2]}}\right\}\leqslant\frac{\delta}{2},
+\end{gather*}
+где $\eta_{i\delta,m}(t)\equiv\int\limits_{\Omega}[\eta_{i\delta}(y,t)g_m(y)+ \langle\nabla_x\eta_{i\delta}(y,t),\nabla g_m(y)\rangle]dy$, $i=1,2$.
+
+Пусть $\delta_j>0$, $\delta_j>\delta_{j+1}$, $j=1,2,\dots$, $\delta_j\to0$, $j\to\infty$, --- некоторая последовательность чисел. Положим $N_j\equiv N(\delta_j)$,
+\begin{gather*}
+\eta_1^{N_j}(x,t)\equiv\sum\limits_{m=1}^{N_j}\eta_{1\delta_j,m}(t)g_m(x),\,\,\,\eta_2^{N_j}(x,t)\equiv\sum\limits_{m=1}^{N_j}\eta_{2\delta_j,m}(t)g_m(x).
+\end{gather*}
+Тогда получим, что $\max\{\|\eta_1-\eta_1^{N_j}\|^{(1)}_{2,Q_{[t_1,t_2]}},\|\eta_2-\eta_2^{N_j}\|^{(1)}_{2,Q_{[t_1,t_2]}}\}\leqslant\delta_j$, $j=1,2,\dots$. Без ограничения общности
+считаем, что $N_j\leqslant N_{j+1}$, $j=1,2,\dots$ Заполним теперь возможные \glqq пропуски\grqq\ в последовательностях $\eta_1^{N_j}$, $\eta_2^{N_j}$, $j=1,2,\dots$ Если $N_1>1$, то
+возьмём $\eta_1^N\equiv\sum\limits_{m=1}^N\eta_{1\delta_1,m}g_m$, $\eta_2^N\equiv\sum\limits_{m=1}^N\eta_{2\delta_1,m}g_m$, $N=\overline{1,N_1-1}$. Далее, для всех $N_j$, $N_{j+1}$,
+$j=1,2,\dots$, таких, что $N_j<N_{j+1}-1$, положим $\eta_1^N\equiv \eta_1^{N_j}$, $\eta_2^N\equiv\eta_2^{N_j}$, $N=\overline{N_j+1,N_{j+1}-1}$. Тогда
+$\max\{\|\eta_1^N-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}},\|\eta_2^N-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}\}\leqslant\delta_j$ для всех $N=\overline{N_j,N_{j+1}-1}$. Пусть $\varepsilon>0$ ---
+произвольно. Так как  $\delta_j\to0$, $j\to\infty$, то $\exists\,j_0(\varepsilon)\geqslant\,\,\forall\,j\geqslant j_0(\varepsilon):0<\delta_j<\varepsilon$. Из способа построения
+последовательностей  $\eta_1^{N_j}$, $\eta_2^{N_j}$, $j=1,2,\dots$, вытекает, что
+\begin{gather*}
+\forall\,N\geqslant N_{j_0(\varepsilon)}: \max\{\|\eta_1^N-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}},\|\eta_2^N-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}\}\leqslant\varepsilon.
+\end{gather*}
+Итак, $\forall\,\varepsilon>0\,\,\exists\,N^*=N^*(\varepsilon)\equiv N_{j_0(\varepsilon)}\,\, \forall\,N\geqslant N^*(\varepsilon):\max\{\|\eta_1^N-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}},
+\|\eta_2^N-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}\}\leqslant\varepsilon$. А это и означает, что
+\begin{gather*}
+\lim\limits_{N\to\infty}\|\eta^N_1-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}}=0,\,\,\,\lim\limits_{N\to\infty}\|\eta^N_2-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}=0.
+\end{gather*}
+Лемма доказана.
+\end{Proof}
 
 \part{Гиперболические уравнения дивергентного вида}
 
