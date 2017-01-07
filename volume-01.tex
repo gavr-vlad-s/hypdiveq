@@ -10362,7 +10362,7 @@ $\mathbf{K}_0\in L_1[0,T]$, такая, что
 Ввиду упомянутой выше эквивалентности интегро--дифференциального уравнения~\ref{nonlinear.equation.solution.repres3} и задачи Коши~(\ref{abstrChauchyprobeq:nonaut:nonlinear}), (\ref{abstrChauchyprobinitcond:nonaut:nonlinear}), это означает, что задача Коши~(\ref{abstrChauchyprobeq:nonaut:nonlinear}), (\ref{abstrChauchyprobinitcond:nonaut:nonlinear}) имеет единственное решение в смысле определения~\ref{defsolabstrChauchyprob1:nonaut:nonlinear}, и справедлива оценка~\eqref{abstrChauchyprobeq:nonaut:a_priori_solution_estimate1:nonlinear} с $\varkappa_3\equiv\varkappa_5^*$. Теорема полностью доказана.
 \end{Proof}
 
-	    \subsection{Линейное уравнение с мерой Радона в правой части}
+	    \subsection{Линейное уравнение с мерой Радона в правой части}\label{sec:linear_with_measure:problem}
 Пусть $\varphi\in V$, $\psi\in H$, $f\in L_1([0,T],H)$, $\mathfrak{g}\in W^1_1([0,T], Y^*)$, $\mu\in\mathbf{M}([0,T],H)$ --- фиксированы.
 
 Пусть, кроме того, функции $\mathfrak{P}:[0,T]\to\mathcal{L}(H,H)$ и $\mathfrak{Q}:[0,T]\to\mathcal{L}(V,H)$ таковы, что
@@ -10397,7 +10397,7 @@ c_4\equiv\int\limits_0^T\|\mathfrak{P}(t)\|_{H\to H}dt,\,\,\,c_5\equiv\int\limit
 \begin{gather}\label{defsolabstrChauchyprob1:nonaut:Radon}
 \int\limits_0^T[-\langle\dot{\mathfrak{x}}(t),\dot{\eta}(t)\rangle_H+\langle \mathfrak{A}(t){\mathfrak{x}}(t),\eta(t)\rangle+\langle\mathfrak{P}(t)\dot{\mathfrak{x}}(t),\eta(t)\rangle_H+ \langle \mathfrak{B}(t){\mathfrak{x}}(t),\eta(t)\rangle + \langle\mathfrak{Q}(t){\mathfrak{x}}(t),\eta(t)\rangle_H + \\
 +\langle \mathfrak{F}(t)\mathfrak{G}{\mathfrak{x}}(t),\mathfrak{G}\eta(t)\rangle_Z]dt+\langle\psi,\eta(T)\rangle_H=\notag\int\limits_0^T\langle f(t),\eta(t)\rangle_Hdt +\int\limits_0^T\langle{\mathfrak{g}}(t), \mathfrak{C}\eta(t)\rangle\,dt+\\
-+\int\limits_{[0,T]}\langle\eta(t),\mu(dt)\rangle_H\,\,\,\forall\,{\eta}\in\hat{\textrm{Э}}{}([0,T];V,H);\,\,\,\notag \mathfrak{x}(T)=\varphi.
++\int\limits_{[0,T]}\langle\eta(t),\mu(dt)\rangle_H\,\,\,\forall\,{\eta}\in{\textrm{Э}}{}([0,T];V,H),\,\,\,\eta(0)=0;\,\,\,\notag \mathfrak{x}(T)=\varphi.
 \end{gather}
 \end{Definition}
 
@@ -10851,7 +10851,78 @@ C([0,T],L_1([0,T],H))$. Итак, доказано, что для всех $\psi
 \eqref{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!theorem.theta.cont:auxiliary_a_priori_estimate} и \eqref{EErevnorms:nonaut:parametric:non-homo}. Теорема полностью доказана.
 \end{Proof}
 
+\begin{Theorem}\label{theta_zeta_interconnection:nonaut}
+При всех $\tau\in[0,T]$ существует единственное решение $\zeta[\psi](\cdot,\tau)\in\textrm{Э}([0,T];V,H)$ задачи Коши~(\ref{abstrChauchyprobeq:nonaut:parametric:non-homogenious.zeta}), \eqref{abstrChauchyprobinitcond:nonaut:parametric:non-homogenious.zeta}, причём справедливо равенство
+\begin{gather}\label{theta_zeta_interconnection:equality:nonaut}
+\zeta[\psi](t,\tau)=\theta[-\psi,0](t,\tau)\chi(t,\tau),\,\,\, t\in[0,T],\,\,\,\tau\in[0,T].
+\end{gather}
+\end{Theorem}
+\begin{Proof}
+Существование и единственность решения $\zeta[\psi](\cdot,\tau)\in\textrm{Э}([0,T];V,H)$ задачи Коши~(\ref{abstrChauchyprobeq:nonaut:parametric:non-homogenious.zeta}), \eqref{abstrChauchyprobinitcond:nonaut:parametric:non-homogenious.zeta} при всех $\tau\in[0,T]$ вытекает из теоремы~\ref{unique_existence_theorem:abstrChauchyprobeq:nonaut:Radon}.
 
+Докажем теперь равенство~\eqref{theta_zeta_interconnection:equality:nonaut}. Прежде всего, в силу данного в разделе~\ref{sec:linear_with_measure:problem} определения задач вида~(\ref{abstrChauchyprobeq:nonaut:parametric:non-homogenious.zeta}), \eqref{abstrChauchyprobinitcond:nonaut:parametric:non-homogenious.zeta},
+\begin{gather}\label{zeta_identity:nonaut}
+\int\limits_0^T[-\langle\zeta_t[\psi](t,\tau),\eta'(t)\rangle_H+\langle \mathfrak{A}(t)\zeta[\psi](t,\tau),\eta(t)\rangle+\langle \mathfrak{B}(t)\zeta[\psi](t,\tau),\eta(t)\rangle + \langle\mathfrak{P}(t)\zeta_t[\psi](t,\tau),\eta(t)\rangle_H+  \\
+\notag+\langle\mathfrak{Q}(t)\zeta[\psi](t,\tau),\eta(t)\rangle_H +\langle\mathfrak{F}(t)\mathfrak{G}\zeta[\psi](t,\tau),\mathfrak{G}\eta(t)\rangle_Z]dt = \langle\eta(\tau),\psi(\tau)\rangle_H\,\,\,\forall\,{\eta}\in{\textrm{Э}}{}([0,T];V,H),\,\,\,\eta(0)=0;\\
+\notag \zeta[\psi](T,\tau)=0.
+\end{gather}
+В последних тождествах отдельно рассмотрим случаи $\tau=0$, $\tau=T$ и $\tau\in(0,T)$.
+
+Пусть сначала $\tau=0$. Тогда тождества (\ref{zeta_identity:nonaut}) перепишутся в виде
+\begin{gather*}
+\int\limits_0^T[-\langle\zeta_t[\psi](t,\tau),\eta'(t)\rangle_H+\langle \mathfrak{A}(t)\zeta[\psi](t,\tau),\eta(t)\rangle+\langle \mathfrak{B}(t)\zeta[\psi](t,\tau),\eta(t)\rangle + \langle\mathfrak{P}(t)\zeta_t[\psi](t,\tau),\eta(t)\rangle_H+  \\
+\notag+\langle\mathfrak{Q}(t)\zeta[\psi](t,\tau),\eta(t)\rangle_H +\langle\mathfrak{F}(t)\mathfrak{G}\zeta[\psi](t,\tau),\mathfrak{G}\eta(t)\rangle_Z]dt =0 \,\,\,\forall\,{\eta}\in{\textrm{Э}}{}([0,T];V,H),\,\,\,\eta(0)=0;\\
+\notag \zeta[\psi](T,\tau)=0.
+\end{gather*}
+Следовательно, функция $\zeta[\psi](t,0)$, $t\in[0,T]$, является решением задачи Коши
+\begin{gather*}
+\zeta_{tt}+\mathfrak{A}(t)\zeta+\mathfrak{B}(t)\zeta + \mathfrak{P}(t)\dot{\zeta}_t + \mathfrak{Q}(t)\zeta + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}\zeta = 0,\,\,\,t\in[0,T],\\
+\zeta|_{t=T}=0,\,\,\,\zeta_t|_{t=T}=0,
+\end{gather*}
+на основании теоремы~\ref{abstrChauchyprobeq:nonaut:nonlinear!theorem} имеющей лишь тривиальное решение. Поэтому в случае $\tau=0$ равенство
+(\ref{theta_zeta_interconnection:equality:nonaut}) выполняется.
+
+Пусть теперь $\tau=T$. Тогда, как нетрудно видеть, функции $\theta[-\psi,0](\cdot,T)$ и $\zeta[\psi](\cdot,T)$ тождественно совпадают, и равенство~(\ref{theta_zeta_interconnection:equality:nonaut}) снова имеет место.
+
+Предположим теперь, что $\tau\in(0,T)$. Пусть в тождествах (\ref{zeta_identity:nonaut}) $\eta$ есть линейная комбинация вида $\sum\limits_{k=1}^Nh_k(t)e_k$, где $N$ --- некоторое
+натуральное число, $h_k$, $k=\overline{1,N}$, --- кусочно непрерывно дифференцируемые на $[0,T]$ функции, $h_k(\tau)=0$, $h_k|_{[0,\tau]}\equiv0$, $k=\overline{1,N}$.
+\end{Proof}
+
+
+Для дальнейшего нам потребуется следующая лемма.
+\begin{Lemma}\label{Cinfty0Qt1t2_convergence:third2[n>1]}
+Пусть $\xi\in C^{\infty}(Q_{[t_1,t_2]})$ для некоторых $t_1$, $t_2\in[0,T]$, $t_1<t_2$. Тогда
+\begin{gather*}
+\lim\limits_{N\to\infty}\max\limits_{t\in[t_1,t_2]}\left\|\xi(\cdot,t)-\sum\limits_{m=1}^N\xi_m(t)g_m\right\|^{(1)}_{2,\Omega}=0,\,\,\,
+\lim\limits_{N\to\infty}\max\limits_{t\in[t_1,t_2]}\left\|\xi_t(\cdot,t)-\sum\limits_{m=1}^N\xi_m'(t)g_m\right\|^{(1)}_{2,\Omega}=0,
+\end{gather*}
+где $\xi_m(t)\equiv\int\limits_{\Omega}[\xi(y,t)g_m(y)+\langle\nabla_x\xi(y,t),\nabla g_m(y)\rangle]dy$, $t\in[t_1,t_2]$, $m,\,\,N=1,2,\dots$
+\end{Lemma}
+\begin{Proof}
+Отметим прежде всего, что $\xi_m\in C^\infty[t_1,t_2]$ при всех $m=1,2,\dots$, поскольку $\xi\in C^{\infty}(Q_{[t_1,t_2]})$. При этом
+\begin{gather*}
+\xi_m'(t)\equiv\int\limits_{\Omega}[\xi_t(y,t)g_m(y)+\langle\nabla_x\xi_t(y,t),\nabla g_m(y)\rangle]dy,\,\,\,t\in[0,T],\,\,\,m=1,2,\dots
+\end{gather*}
+Положим
+\begin{gather*}
+r_{N,0}(t)\equiv\left\|\xi(\cdot,t)-\sum\limits_{m=1}^N\xi_m(t)g_m\right\|^{(1)}_{2,\Omega},\,\,\,
+r_{N,1}(t)\equiv\left\|\xi_t(\cdot,t)-\sum\limits_{m=1}^N\xi_m'(t)g_m\right\|^{(1)}_{2,\Omega},\,\,\,t\in[t_1,t_2],\,\,\,N=1,2,\dots
+\end{gather*}
+В силу леммы \ref{basis:third2[n>1]},
+\begin{gather*}
+r_{N,0}(t)\to0,\,\,\,r_{N,1}(t)\to0,\,\,\,N\to\infty,\,\,\,\forall\,t\in[t_1,t_2].
+\end{gather*}
+Ввиду ортогональности системы $g_m$, $m=1,2,\dots$, в  ${W}^1_{2}(\Omega)$
+\begin{gather*}
+r_{N,0}(t)=\sqrt{[\|\xi(\cdot,t)\|^{(1)}_{2,\Omega}]^2-\sum\limits_{m=1}^N[\xi_m(t)\|g_m\|^{(1)}_{2,\Omega}]^2},\,\,\,
+r_{N,1}(t)=\sqrt{[\|\xi_t(\cdot,t)\|^{(1)}_{2,\Omega}]^2-\sum\limits_{m=1}^N[\xi_m'(t)\|g_m\|^{(1)}_{2,\Omega}]^2},
+\end{gather*}
+откуда заключаем, что
+\begin{gather*}
+r_{N,0}(t)\geqslant r_{N+1,0}(t),\,\,\,r_{N,1}(t)\geqslant r_{N+1,1}(t),\,\,\,t\in[t_1,t_2],\,\,\,N=1,2,\dots
+\end{gather*}
+Применяя теперь лемму \ref{Dini1}, получаем утверждение леммы. Лемма доказана.
+\end{Proof}
 
 Для всех  $t_1$, $t_2\in[0,T]$, $t_1<t_2$, через $\mathfrak{K}^N[t_1,t_2]$ обозначим множество функций вида
 \begin{gather*}
