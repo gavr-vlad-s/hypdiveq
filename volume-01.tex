@@ -4231,7 +4231,7 @@ f^{(m)}(\varphi)\stackrel{\mathrm{def}}{=}(-1)^mf(\varphi^{(m)})\,\,\,\forall\,\
 $\varphi^{(m)}\in\mathfrak{D}(0,T)$, так что правая часть (\ref{X_valued_regular_distribution_derivative}) действительно имеет смысл. Следовательно, оператор $f^{(m)}$ определён на всём
 основном пространстве. Линейность данного оператора следует из определения обобщённой функции. Проверим непрерывность оператора $f^{(m)}$. Если $\varphi_j
 \stackrel{\mathfrak{D}(0,T)}{\longrightarrow}\varphi$, $j\to\infty$, то, очевидно, $\varphi_j^{(m)}\stackrel{\mathfrak{D}(0,T)}{\longrightarrow}\varphi^{(m)}$, $j\to\infty$. В силу слабой
-непрерывности $f$ и равенства (\ref{X_valued_regular_distribution_derivative}) для всех $x^*\in X^*$ при $j\to\infty$ имеем сходимость
+непрерывности $f$ и равенства (\ref{X_valued_regular_distribution_derivative}), для всех $x^*\in X^*$ при $j\to\infty$ имеем сходимость
 \begin{gather*}
 \langle f^{(m)}(\varphi_j),x^*\rangle=\langle (-1)^mf(\varphi^{(m)}_j),x^*\rangle\to \langle (-1)^mf(\varphi^{(m)}),x^*\rangle=\langle f^{(m)}(\varphi),x^*\rangle.
 \end{gather*}
@@ -4490,7 +4490,7 @@ f(t)=C+(\textrm{Б})\int\limits_0^tg(\xi)d\xi.
 \begin{gather*}
 [0,T]\ni t\mapsto\langle f(t),x^*\rangle
 \end{gather*}
-является элементом $W^1_1[0,T]$,, а её обобщённой производной в смысле Соболева является функция
+является элементом $W^1_1[0,T]$, а её обобщённой производной в смысле Соболева является функция
 \begin{gather*}
 [0,T]\ni t\mapsto\langle g(t),x^*\rangle.
 \end{gather*}
@@ -4541,7 +4541,7 @@ L_\infty([0,T],X)\cap C_s([0,T],Y)=C_s([0,T],X).
 \begin{gather}\label{fW11represent}
 f(t)=C+\int\limits_0^tg(\xi)d\xi\,\,\,\forall\,t\in[0,T].
 \end{gather}
-Поскольку, как известно, $C([0,T],X)$ всюду плотно в $L_1([0,T],X)$, а, в силу леммы \ref{Weierstrass:approx}, множество многочленов с
+Поскольку, как известно, \underline{$C([0,T],X)$ всюду плотно в $L_1([0,T],X)$}, а, в силу леммы \ref{Weierstrass:approx}, множество многочленов с
 коэффициентами из $X$ всюду плотно в $C([0,T],X)$, то найдётся такая последовательность $g_j$, $j=1,2,\dots$, многочленов с коэффициентами из $X$, что
 \begin{gather}\label{gjconvginL1[0T]X}
 \lim\limits_{j\to\infty}\|g_j-g\|_{1,[0,T],X}=0.
@@ -4857,7 +4857,7 @@ $\|\cdot\|_X$. Множество $\mathfrak{M}\subset C(\mathcal{P},X)$ пре�
 Кроме того, вложение $\textrm{Э}([0,T];V,H)\subset C([0,T],H)$ --- компактно.
 \end{Theorem}
 \begin{Proof} Утверждение о том, что имеет место вложение $\textrm{Э}([0,T];V,H)\subset C([0,T],H)$ и это вложение непрерывно, следует из
-предыдущей теоремы, очевидного вложения $$\textrm{Э}([0,T];V,H)\subset\mathcal{W}([0,T];V,H)$$ и определения нормы в пространстве $\textrm{Э}([0,T];V,H)$.
+предыдущей теоремы, очевидного вложения $$\textrm{Э}([0,T];V,H)\subset\mathcal{W}^1_2([0,T];V,H)$$ и определения нормы в пространстве $\textrm{Э}([0,T];V,H)$.
 Таким образом, достаточно лишь доказать компактность вложения $\textrm{Э}([0,T];V,H)\subset C([0,T],H)$.
 
 В самом деле, пусть $\mathfrak{M}\subset \textrm{Э}([0,T];V,H)$ --- ограниченное в норме $\textrm{Э}([0,T];V,H)$ множество. Тогда найдётся постоянная $K>0$, такая, что
@@ -5339,6 +5339,26 @@ $$
 {\sf z}^N\in\mathfrak{M}^N,\,\,\,N=1,2,\dots,\,\,\,\|{\sf z}^N-{\sf z}\|_{\mathcal{W}{}^1_2([0,T];V,H)}\to0,\,\,\,N\to\infty.
 \end{gather*}
 \end{Proof}
+
+
+Для всех  $t_1$, $t_2\in[0,T]$, $t_1<t_2$, через $\mathfrak{K}^N[t_1,t_2]$ обозначим множество функций вида
+\begin{gather*}
+[t_1,t_2]\ni t\mapsto \sum\limits_{m=1}^Nw_m(t)e_m
+\end{gather*}
+где $w_m\in C^\infty[t_1,t_2]$, $m=\overline{1,N}$. Положим $\mathfrak{K}^N_{t_1}[t_1,t_2]\equiv\{\eta\in\mathfrak{K}^N[t_1,t_2]:\eta(t_1)=0\}$,
+$\mathfrak{K}^N_{t_2}[t_1,t_2]\equiv\{\eta\in\mathfrak{K}^N[t_1,t_2]:\eta(t_2)=0\}$, $\mathfrak{K}^N\equiv\mathfrak{K}^N[0,T]$, $\mathfrak{K}^N_0\equiv
+\mathfrak{K}^N_0[0,T]$, $\mathfrak{K}^N_T\equiv\mathfrak{K}^N_T[0,T]$.
+
+Нетрудно показать, что справедлива следующая
+\begin{Lemma}\label{W120QT_approximation:abstract}
+Пусть $\eta_1$, $\eta_2\in {\mathcal{W}}{}^1_2([t_1,t_2];V,H)$, причём $\eta_1(t_1)=\eta_2(t_2)= 0$. Тогда существуют последовательности $\eta^N_1\in\mathfrak{K}^N_{t_1}[t_1,t_2]$,
+$\eta^N_2\in\mathfrak{K}^N_{t_2}[t_1,t_2]$, $N=1,2,\dots$, такие, что
+\begin{gather*}
+\lim\limits_{N\to\infty}\|\eta^N_1-\eta_1\|_{{\mathcal{W}}{}^1_2([t_1,t_2];V,H)}=0,\,\,\,\lim\limits_{N\to\infty}\|\eta^N_2-\eta_2\|_{{\mathcal{W}}{}^1_2([t_1,t_2];V,H)}=0.
+\end{gather*}
+\end{Lemma}
+
+
 
         \section{Следствия}
 Пусть $X$ --- компактное топологическое пространство, $\mu$ --- положительная мера Радона на нём. Через $L_\infty(X,\mu)$ будем обозначать банахово пространство $\mu$--существенно
@@ -10879,100 +10899,82 @@ C([0,T],L_1([0,T],H))$. Итак, доказано, что для всех $\psi
 \zeta_{tt}+\mathfrak{A}(t)\zeta+\mathfrak{B}(t)\zeta + \mathfrak{P}(t)\dot{\zeta}_t + \mathfrak{Q}(t)\zeta + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}\zeta = 0,\,\,\,t\in[0,T],\\
 \zeta|_{t=T}=0,\,\,\,\zeta_t|_{t=T}=0,
 \end{gather*}
-на основании теоремы~\ref{abstrChauchyprobeq:nonaut:nonlinear!theorem} имеющей лишь тривиальное решение. Поэтому в случае $\tau=0$ равенство
-(\ref{theta_zeta_interconnection:equality:nonaut}) выполняется.
+на основании теоремы~\ref{abstrChauchyprobeq:nonaut:nonlinear!theorem} имеющей лишь тривиальное решение. Поэтому в случае $\tau=0$ равенство~(\ref{theta_zeta_interconnection:equality:nonaut}) выполняется.
 
 Пусть теперь $\tau=T$. Тогда, как нетрудно видеть, функции $\theta[-\psi,0](\cdot,T)$ и $\zeta[\psi](\cdot,T)$ тождественно совпадают, и равенство~(\ref{theta_zeta_interconnection:equality:nonaut}) снова имеет место.
 
 Предположим теперь, что $\tau\in(0,T)$. Пусть в тождествах (\ref{zeta_identity:nonaut}) $\eta$ есть линейная комбинация вида $\sum\limits_{k=1}^Nh_k(t)e_k$, где $N$ --- некоторое
-натуральное число, $h_k$, $k=\overline{1,N}$, --- кусочно непрерывно дифференцируемые на $[0,T]$ функции, $h_k(\tau)=0$, $h_k|_{[0,\tau]}\equiv0$, $k=\overline{1,N}$.
+натуральное число, $h_k$, $k=\overline{1,N}$, --- кусочно непрерывно дифференцируемые на $[0,T]$ функции, $h_k(\tau)=0$, $h_k|_{[0,\tau]}\equiv0$, $k=\overline{1,N}$. Учитывая, что, в силу леммы \ref{W120QT_approximation:abstract}, множество сужений всех таких $\eta$ всюду плотно в множестве функций из $\mathcal{W}^1_{2}([\tau,T];V,H)$, равных нулю при $t=\tau$, заключаем, что имеют место соотношения
+\begin{gather*}
+\int\limits_\tau^T[-\langle\zeta_t[\psi](t,\tau),\eta'(t)\rangle_H+\langle \mathfrak{A}(t)\zeta[\psi](t,\tau),\eta(t)\rangle+\langle \mathfrak{B}(t)\zeta[\psi](t,\tau),\eta(t)\rangle + \langle\mathfrak{P}(t)\zeta_t[\psi](t,\tau),\eta(t)\rangle_H+  \\
+\notag+\langle\mathfrak{Q}(t)\zeta[\psi](t,\tau),\eta(t)\rangle_H +\langle\mathfrak{F}(t)\mathfrak{G}\zeta[\psi](t,\tau),\mathfrak{G}\eta(t)\rangle_Z]dt = \langle\eta(\tau),\psi(\tau)\rangle_H\,\,\,\forall\,{\eta}\in{\textrm{Э}}{}([0,T];V,H),\,\,\,\eta(\tau)=0;\\
+\notag \zeta[\psi](T,\tau)=0.
+\end{gather*}
+На основании последних равенств заключаем, что при $t\in(\tau,T)$ функция $\zeta[\psi](\cdot,\tau)$ есть решение задачи Коши
+\begin{gather*}
+\zeta_{tt}+\mathfrak{A}(t)\zeta+\mathfrak{B}(t)\zeta + \mathfrak{P}(t)\dot{\zeta}_t + \mathfrak{Q}(t)\zeta + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}\zeta = 0,\,\,\,t\in[\tau,T],\\
+\zeta|_{t=T}=0,\,\,\,\zeta_t|_{t=T}=0,
+\end{gather*}
+на основании теоремы~\ref{abstrChauchyprobeq:nonaut:nonlinear!theorem} имеющей лишь тривиальное решение. Поэтому $\zeta[\psi](t,\tau)\equiv0$, $t\in(\tau,T)$, ввиду чего
+соотношения (\ref{zeta_identity:nonaut}) можно переписать в виде 
+\begin{gather*}
+\int\limits_0^\tau[-\langle\zeta_t[\psi](t,\tau),\eta'(t)\rangle_H+\langle \mathfrak{A}(t)\zeta[\psi](t,\tau),\eta(t)\rangle+\langle \mathfrak{B}(t)\zeta[\psi](t,\tau),\eta(t)\rangle + \langle\mathfrak{P}(t)\zeta_t[\psi](t,\tau),\eta(t)\rangle_H+  \\
+\notag+\langle\mathfrak{Q}(t)\zeta[\psi](t,\tau),\eta(t)\rangle_H +\langle\mathfrak{F}(t)\mathfrak{G}\zeta[\psi](t,\tau),\mathfrak{G}\eta(t)\rangle_Z]dt = \langle\eta(\tau),\psi(\tau)\rangle_H\,\,\,\forall\,{\eta}\in{\textrm{Э}}{}([0,T];V,H),\,\,\,\eta(0)=0;\\
+\notag \zeta[\psi](\tau,\tau)=0.
+\end{gather*}
+В силу данных равенств выводим, что при $t\in(0,\tau)$ функция $\zeta[\psi](\cdot,\tau)$ является решением задачи Коши
+\begin{gather*}
+\zeta_{tt}+\mathfrak{A}(t)\zeta+\mathfrak{B}(t)\zeta + \mathfrak{P}(t)\dot{\zeta}_t + \mathfrak{Q}(t)\zeta + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}\zeta = 0,\,\,\,t\in[0,\tau],\\
+\zeta|_{t=\tau}=0,\,\,\,\zeta_t|_{t=\tau}=-\psi(\tau),
+\end{gather*}
+Следовательно, в случае  $\tau\in(0,T)$ равенство (\ref{theta_zeta_interconnection:equality:nonaut}) также справедливо. Теорема полностью доказана.
 \end{Proof}
 
 
-Для дальнейшего нам потребуется следующая лемма.
-\begin{Lemma}\label{Cinfty0Qt1t2_convergence:third2[n>1]}
-Пусть $\xi\in C^{\infty}(Q_{[t_1,t_2]})$ для некоторых $t_1$, $t_2\in[0,T]$, $t_1<t_2$. Тогда
-\begin{gather*}
-\lim\limits_{N\to\infty}\max\limits_{t\in[t_1,t_2]}\left\|\xi(\cdot,t)-\sum\limits_{m=1}^N\xi_m(t)g_m\right\|^{(1)}_{2,\Omega}=0,\,\,\,
-\lim\limits_{N\to\infty}\max\limits_{t\in[t_1,t_2]}\left\|\xi_t(\cdot,t)-\sum\limits_{m=1}^N\xi_m'(t)g_m\right\|^{(1)}_{2,\Omega}=0,
-\end{gather*}
-где $\xi_m(t)\equiv\int\limits_{\Omega}[\xi(y,t)g_m(y)+\langle\nabla_x\xi(y,t),\nabla g_m(y)\rangle]dy$, $t\in[t_1,t_2]$, $m,\,\,N=1,2,\dots$
-\end{Lemma}
+\begin{Theorem}\label{omega_decomposition:nonaut}
+Существует единственное решение $\varpi[\psi,\mu]\in\textrm{Э}([0,T];V,H)$ задачи Коши~\eqref{abstrChauchyprobeq:nonaut:Radon:varpi}, \eqref{abstrChauchyprobinitcond:nonaut:Radon:varpi}, причём при п.в. $t\in[0,T]$  справедливы равенства
+\begin{gather}\label{omega_decomposition:equalities:nonaut}
+\varpi[\psi,\mu](t)=\int\limits_{[0,T]}\zeta[\psi](t,\tau)\mu(d\tau),\,\,\,\varpi_t[\psi,\mu](t)=\int\limits_{[0,T]}\zeta_t[\psi](t,\tau)\mu(d\tau).
+\end{gather}
+\end{Theorem}
 \begin{Proof}
-Отметим прежде всего, что $\xi_m\in C^\infty[t_1,t_2]$ при всех $m=1,2,\dots$, поскольку $\xi\in C^{\infty}(Q_{[t_1,t_2]})$. При этом
+1) Существование и единственность решения задачи Коши~\eqref{abstrChauchyprobeq:nonaut:Radon:varpi}, \eqref{abstrChauchyprobinitcond:nonaut:Radon:varpi} вытекает из теоремы~\ref{unique_existence_theorem:abstrChauchyprobeq:nonaut:Radon}.
+
+2) Докажем теперь равенства (\ref{omega_decomposition:equalities:nonaut}).
+
+Поскольку, на основании теоремы \ref{abstrChauchyprobeq:nonaut:parametric:non-homogenious.eq!theorem.theta.cont}, при всех $\psi\in C([0,T],H)$ имеет место включение $\theta[-\psi,0]\in C([0,T],
+\textrm{Э}([0,T];V,H))$, то для любой меры Радона $\mu\in\mathbf{M}[0,T]$ конечны интегралы
 \begin{gather*}
-\xi_m'(t)\equiv\int\limits_{\Omega}[\xi_t(y,t)g_m(y)+\langle\nabla_x\xi_t(y,t),\nabla g_m(y)\rangle]dy,\,\,\,t\in[0,T],\,\,\,m=1,2,\dots
+\int\limits_{[0,T]}\left[\int\limits_0^T\|\theta[-\psi,0](t,\tau)\|^2_Vdt\right]|\mu|(d\tau),\,\,\,
+\int\limits_{[0,T]}\left[\int\limits_0^T\|\theta_t[-\psi,0](t,\tau)\|^2_Hdt\right]|\mu|(d\tau),
 \end{gather*}
-Положим
+что, в силу доказанного в теореме \ref{theta_zeta_interconnection:nonaut} равенства (\ref{theta_zeta_interconnection:equality:nonaut}), означает суммируемость с квадратом (по $[0,T]$) функций
 \begin{gather*}
-r_{N,0}(t)\equiv\left\|\xi(\cdot,t)-\sum\limits_{m=1}^N\xi_m(t)g_m\right\|^{(1)}_{2,\Omega},\,\,\,
-r_{N,1}(t)\equiv\left\|\xi_t(\cdot,t)-\sum\limits_{m=1}^N\xi_m'(t)g_m\right\|^{(1)}_{2,\Omega},\,\,\,t\in[t_1,t_2],\,\,\,N=1,2,\dots
+\left\|\int\limits_{[0,T]}\zeta[\psi](t,\tau)\mu(d\tau)\right\|_V,\,\,\,\left\|\int\limits_{[0,T]}\zeta_t[\psi](t,\tau)\mu(d\tau)\right\|_H,\,\,\,t\in[0,T],
 \end{gather*}
-В силу леммы \ref{basis:third2[n>1]},
+Кроме того, пользуясь определением обобщённых производных, выводим, что
+\begin{gather}\label{zeta_derivatives_representation:equalities:nonaut}
+\frac{d}{dt}\int\limits_{[0,T]}\zeta[\psi](t,\tau)\mu(d\tau)=\int\limits_{[0,T]}\zeta_t[\psi](t,\tau)\mu(d\tau).
+\end{gather}
+Для завершения доказательства осталось лишь показать, что
+\begin{gather}\label{omega_representation:nonaut}
+\varpi[\psi,\mu](t)\equiv\int\limits_{[0,T]}\zeta[\psi](t,\tau)\mu(d\tau),\,\,\, t\in[0,T].
+\end{gather}
+Действительно, поскольку $\zeta[\psi]$ есть решение задачи Коши~(\ref{abstrChauchyprobeq:nonaut:parametric:non-homogenious.zeta}), \eqref{abstrChauchyprobinitcond:nonaut:parametric:non-homogenious.zeta}, то выполнены тождества
 \begin{gather*}
-r_{N,0}(t)\to0,\,\,\,r_{N,1}(t)\to0,\,\,\,N\to\infty,\,\,\,\forall\,t\in[t_1,t_2].
+\int\limits_0^T[-\langle\zeta_t[\psi](t,\tau),\eta'(t)\rangle_H+\langle \mathfrak{A}(t)\zeta[\psi](t,\tau),\eta(t)\rangle+\langle \mathfrak{B}(t)\zeta[\psi](t,\tau),\eta(t)\rangle + \langle\mathfrak{P}(t)\zeta_t[\psi](t,\tau),\eta(t)\rangle_H+  \\
+\notag+\langle\mathfrak{Q}(t)\zeta[\psi](t,\tau),\eta(t)\rangle_H +\langle\mathfrak{F}(t)\mathfrak{G}\zeta[\psi](t,\tau),\mathfrak{G}\eta(t)\rangle_Z]dt = \langle\eta(\tau),\psi(\tau)\rangle_H\,\,\,\forall\,{\eta}\in{\textrm{Э}}{}([0,T];V,H),\,\,\,\eta(0)=0;\\
+\notag \zeta[\psi](T,\tau)=0,\,\,\,\tau\in[0,T].
 \end{gather*}
-Ввиду ортогональности системы $g_m$, $m=1,2,\dots$, в  ${W}^1_{2}(\Omega)$
-\begin{gather*}
-r_{N,0}(t)=\sqrt{[\|\xi(\cdot,t)\|^{(1)}_{2,\Omega}]^2-\sum\limits_{m=1}^N[\xi_m(t)\|g_m\|^{(1)}_{2,\Omega}]^2},\,\,\,
-r_{N,1}(t)=\sqrt{[\|\xi_t(\cdot,t)\|^{(1)}_{2,\Omega}]^2-\sum\limits_{m=1}^N[\xi_m'(t)\|g_m\|^{(1)}_{2,\Omega}]^2},
-\end{gather*}
-откуда заключаем, что
-\begin{gather*}
-r_{N,0}(t)\geqslant r_{N+1,0}(t),\,\,\,r_{N,1}(t)\geqslant r_{N+1,1}(t),\,\,\,t\in[t_1,t_2],\,\,\,N=1,2,\dots
-\end{gather*}
-Применяя теперь лемму \ref{Dini1}, получаем утверждение леммы. Лемма доказана.
+Интегрируя последние тождества по мере $\mu$, в силу (\ref{zeta_derivatives_representation:equalities:nonaut}) заключаем, что функция
+$$\Upsilon(t)\equiv\int\limits_{[0,T]}\zeta[\psi](t,\tau)\mu(d\tau),\,\,\, t\in[0,T],$$
+является решением задачи Коши~\eqref{abstrChauchyprobeq:nonaut:Radon:varpi}, \eqref{abstrChauchyprobinitcond:nonaut:Radon:varpi}. Это, в силу единственности решения данной задачи, даёт равенство (\ref{omega_representation:nonaut}).
+Теорема полностью доказана.
 \end{Proof}
 
-Для всех  $t_1$, $t_2\in[0,T]$, $t_1<t_2$, через $\mathfrak{K}^N[t_1,t_2]$ обозначим множество функций вида
-\begin{gather*}
-(x,t)\ni Q_{[t_1,t_2]}\mapsto\sum\limits_{m=1}^Nw_m(t)g_m(x),
-\end{gather*}
-где $w_m\in C^\infty[t_1,t_2]$, $m=\overline{1,N}$. Положим $\mathfrak{K}^N_{t_1}[t_1,t_2]\equiv\{\eta\in\mathfrak{K}^N[t_1,t_2]:\eta(x,t_1)=0\mbox{ при п.в. $x\in\Omega$}\}$,
-$\mathfrak{K}^N_{t_2}[t_1,t_2]\equiv\{\eta\in\mathfrak{K}^N[t_1,t_2]:\eta(x,t_2)=0\mbox{ при п.в. $x\in\Omega$}\}$, $\mathfrak{K}^N\equiv\mathfrak{K}^N[0,T]$, $\mathfrak{K}^N_0\equiv
-\mathfrak{K}^N_0[0,T]$, $\mathfrak{K}^N_T\equiv\mathfrak{K}^N_T[0,T]$.
 
-\begin{Lemma}\label{W120QT_approximation:third2[n>1]}
-Пусть $\eta_1$, $\eta_2\in W^1_{2}(Q_{[t_1,t_2]})$, причём $\eta_1(\cdot,t_1)=\eta_2(\cdot,t_2)= 0$. Тогда существуют последовательности $\eta^N_1\in\mathfrak{K}^N_{t_1}[t_1,t_2]$,
-$\eta^N_2\in\mathfrak{K}^N_{t_2}[t_1,t_2]$, $N=1,2,\dots$, такие, что
-\begin{gather*}
-\lim\limits_{N\to\infty}\|\eta^N_1-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}}=0,\,\,\,\lim\limits_{N\to\infty}\|\eta^N_2-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}=0.
-\end{gather*}
-\end{Lemma}
-\begin{Proof}
-Поскольку $C^\infty(Q_{[t_1,t_2]})$ всюду плотно в $W^1_{2}(Q_{[t_1,t_2]})$, то
-\begin{gather*}
-\forall\,\delta>0\,\,\exists\,\eta_{1\delta},\,\,\eta_{2\delta}\in C^{\infty}(Q_T),\,\,\eta_{1\delta}(x,t_1)=\eta_{2\delta}(x,t_2)=0,\,\,\,x\in\Omega:\\
-\max\{\|\eta_{1\delta}-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}},\|\eta_{2\delta}-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}\} \leqslant\frac{\delta}{2}.
-\end{gather*}
-На основании леммы \ref{Cinfty0Qt1t2_convergence:third2[n>1]}
-\begin{gather*}
-\exists\,N_0(\delta)\,\,\forall\,N\geqslant N_0(\delta):\max\left\{\left\|\eta_{1\delta}-\sum\limits_{m=1}^N\eta_{1\delta,m}(t)g_m\right\|^{(1)}_{2,Q_{[t_1,t_2]}},
-\left\|\eta_{2\delta}-\sum\limits_{m=1}^N\eta_{2\delta,m}(t)g_m\right\|^{(1)}_{2,Q_{[t_1,t_2]}}\right\}\leqslant\frac{\delta}{2},
-\end{gather*}
-где $\eta_{i\delta,m}(t)\equiv\int\limits_{\Omega}[\eta_{i\delta}(y,t)g_m(y)+ \langle\nabla_x\eta_{i\delta}(y,t),\nabla g_m(y)\rangle]dy$, $i=1,2$.
 
-Пусть $\delta_j>0$, $\delta_j>\delta_{j+1}$, $j=1,2,\dots$, $\delta_j\to0$, $j\to\infty$, --- некоторая последовательность чисел. Положим $N_j\equiv N(\delta_j)$,
-\begin{gather*}
-\eta_1^{N_j}(x,t)\equiv\sum\limits_{m=1}^{N_j}\eta_{1\delta_j,m}(t)g_m(x),\,\,\,\eta_2^{N_j}(x,t)\equiv\sum\limits_{m=1}^{N_j}\eta_{2\delta_j,m}(t)g_m(x).
-\end{gather*}
-Тогда получим, что $\max\{\|\eta_1-\eta_1^{N_j}\|^{(1)}_{2,Q_{[t_1,t_2]}},\|\eta_2-\eta_2^{N_j}\|^{(1)}_{2,Q_{[t_1,t_2]}}\}\leqslant\delta_j$, $j=1,2,\dots$. Без ограничения общности
-считаем, что $N_j\leqslant N_{j+1}$, $j=1,2,\dots$ Заполним теперь возможные \glqq пропуски\grqq\ в последовательностях $\eta_1^{N_j}$, $\eta_2^{N_j}$, $j=1,2,\dots$ Если $N_1>1$, то
-возьмём $\eta_1^N\equiv\sum\limits_{m=1}^N\eta_{1\delta_1,m}g_m$, $\eta_2^N\equiv\sum\limits_{m=1}^N\eta_{2\delta_1,m}g_m$, $N=\overline{1,N_1-1}$. Далее, для всех $N_j$, $N_{j+1}$,
-$j=1,2,\dots$, таких, что $N_j<N_{j+1}-1$, положим $\eta_1^N\equiv \eta_1^{N_j}$, $\eta_2^N\equiv\eta_2^{N_j}$, $N=\overline{N_j+1,N_{j+1}-1}$. Тогда
-$\max\{\|\eta_1^N-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}},\|\eta_2^N-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}\}\leqslant\delta_j$ для всех $N=\overline{N_j,N_{j+1}-1}$. Пусть $\varepsilon>0$ ---
-произвольно. Так как  $\delta_j\to0$, $j\to\infty$, то $\exists\,j_0(\varepsilon)\geqslant\,\,\forall\,j\geqslant j_0(\varepsilon):0<\delta_j<\varepsilon$. Из способа построения
-последовательностей  $\eta_1^{N_j}$, $\eta_2^{N_j}$, $j=1,2,\dots$, вытекает, что
-\begin{gather*}
-\forall\,N\geqslant N_{j_0(\varepsilon)}: \max\{\|\eta_1^N-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}},\|\eta_2^N-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}\}\leqslant\varepsilon.
-\end{gather*}
-Итак, $\forall\,\varepsilon>0\,\,\exists\,N^*=N^*(\varepsilon)\equiv N_{j_0(\varepsilon)}\,\, \forall\,N\geqslant N^*(\varepsilon):\max\{\|\eta_1^N-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}},
-\|\eta_2^N-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}\}\leqslant\varepsilon$. А это и означает, что
-\begin{gather*}
-\lim\limits_{N\to\infty}\|\eta^N_1-\eta_1\|^{(1)}_{2,Q_{[t_1,t_2]}}=0,\,\,\,\lim\limits_{N\to\infty}\|\eta^N_2-\eta_2\|^{(1)}_{2,Q_{[t_1,t_2]}}=0.
-\end{gather*}
-Лемма доказана.
-\end{Proof}
+
 
 \part{Гиперболические уравнения дивергентного вида}
 
