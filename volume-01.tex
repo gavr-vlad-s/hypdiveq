@@ -10979,6 +10979,63 @@ $$\Upsilon(t)\equiv\int\limits_{[0,T]}\zeta[\psi](t,\tau)\mu(d\tau),\,\,\, t\in[
 \part{Гиперболические уравнения дивергентного вида}
 
     \chapter{Уравнения с главной частью второго порядка ($n=1$)}
+Всюду в настоящей главе предполагаем, что $\Omega\equiv(l_1,l_2)$, где $l_1$, $l_2$, $l_1<l_2$, --- некоторые вещественные числа. Соответственно, $Q_T\equiv\Omega\times(0,T)\equiv(l_1,l_2)\times(0,T)$.
+
+Всюду далее в этой главе точку $x=l_1$, являющуюся левым концом интервала $(l_1,l_2)$, будем называть\ \glqq левый конец\grqq, а точку $x=l_2$, являющуюся правым концом интервала $(l_1,l_2)$, будем называть\ \glqq правый конец\grqq.
+
+        \section{Однородная первая начально--краевая задача}
+            \subsection{Нелинейное уравнение без меры Радона в правой части}\label{sec:semilinear:Dirichlet2[n=1]}
+Рассмотрим следующую начально--краевую задачу:
+\begin{gather}\label{semilinear:problem:Dirichlet2[n=1]}
+z_{tt}-\frac{\partial}{\partial x}(a_{1}(x,t)z_{x}+a_2(x,t)z)=g(x,t,z(x,t),\nabla_xz(x,t),z_t(x,t)),\,\,\,(x,t)\in Q_T;\\
+\notag z(x,0)=\varphi(x),\,\,\,z_t(x,0)=\psi(x),\,\,\,x\in\Omega;\,\,\,z(l_1,t)=z(l_2,t)=0,\,\,\,t\in(0,T).
+\end{gather}
+
+Считаем, что выполнены следующие условия на исходные данные задачи (\ref{semilinear:problem:Dirichlet2[n=1]}):
+\begin{enumerate}
+    \item
+функции $a_{1}$, $a_{1t}$, $a_2$, $a_{2t}$ --- определены и измеримы по Лебегу на $Q_T$;
+    \item
+справедливы условия и оценки
+\begin{gather*}
+\varphi\in\stackrel{\circ}{W}\!\!^1_2(\Omega),\,\,\psi\in L_2(\Omega);\,\,\nu_1\leqslant a_{1}(x,t)\leqslant\nu_2\,\,\forall\,(x,t)\in Q_T\,\,\,(\nu_1,\,\nu_2>0);\\
+\|a_{1}\|_{\infty,1,Q_T}+\|a_{2}\|_{\infty,1,Q_T}+\|a_{1t}\|_{\infty,Q_T}+\|a_{2t}\|_{\infty,Q_T}\leqslant\nu_3;
+\end{gather*}
+
+	\item функция  $g\colon Q_{T}\times \mathbb{R}\times \mathbb{R}\times \mathbb{R}\to \mathbb{R}$, --- измерима по~$(x,t,z,p,r)\in Q_{T}\times \mathbb{R}\times \mathbb{R}\times \mathbb{R}$, и непрерывна
+по~$(z,p,r)\in \mathbb{R}\times \mathbb{R}\times \mathbb{R}$ при п.в.~$(x,t)\in Q_{T}$;
+    \item справедливы оценки
+\begin{gather*}
+|g(x,t,z_1,p_1,r_1)-g(x,t,z_2,p_2,r_2)|\leqslant k_0(t)[|z_1-z_2|+|p_1-p_2|+|r_1-r_2|],\\ %\,\,\,
+\forall\,(x,t,z_i,p_i,r_i)\in Q_{T}\times \mathbb{R}\times \mathbb{R}^n \times \mathbb{R},\,\,\,i=1,\,2;\\
+|g(x,t,0,0,0)|\leqslant k_1(x,t),\,\,\,(x,t)\in Q_{T};
+\end{gather*}
+где $k_0\in L_1[0,T]$, $k_1\in L_{2,1}(Q_T)$.
+\end{enumerate}
+
+Дадим следующее
+\begin{Definition}
+Функцию $z$ назовём решением задачи (\ref{semilinear:problem:Dirichlet2[n=1]}), принадлежащим энергетическому классу первого рода
+$\textrm{Э}^{1}_{2,0}(Q_T)$, если $z$ является элементом $\textrm{Э}^{1}_{2,0}(Q_T)$ и удовлетворяет ин\-тег\-раль\-но\-му тождеству
+\begin{gather}\label{semilinear:problem:Dirichlet2[n=1]:integral_identity}
+\int\limits_{Q_T}[-z_t\eta_t+a_{1}z_{x}\eta_{x}+a_2z\eta_{x}]dxdt=\int\limits_{Q_T}g(x,t,z,\nabla_xz,z_t)\eta dxdt+\int\limits_\Omega\psi(x)\eta(x,0)dx\,\,\,\forall\,
+\eta\in\hat{\textrm{Э}}{}^{1}_{2,0}(Q_T);\\
+\notag z(x,0)=\varphi(x),\,\,\,x\in\Omega.
+\end{gather}
+\end{Definition}
+
+Покажем, что имеет место
+\begin{Theorem}\label{unique_existence_theorem:semilinear:problem:Dirichlet2[n=1]}
+Задача (\ref{semilinear:problem:Dirichlet2[n=1]}) имеет единственное решение $z$, принадлежащее энергетическому классу первого рода,
+причём найдётся константа $B_2>0$, определяемая лишь числами $T$, $\nu_1$, $\nu_2$, $\nu_3>0$, функцией $k\in L_1[0,T]$ и областью $\Omega$, такая, что
+\begin{gather}\label{sec:semilinear:problem:Dirichlet2[n=1]:a_priori_solution_estimate}
+\|z\|_{\textrm{Э}^{1}_{2}(Q_T)}\leqslant B_2[\|\varphi\|^{(1)}_{2,\Omega}+\|\psi\|_{2,\Omega}+\|a(\cdot,\cdot,0)\|_{2,1,Q_T}].
+\end{gather}
+\end{Theorem}
+\begin{Proof}
+
+\end{Proof}
+
 
     \chapter{Уравнения с главной частью второго порядка ($n>1$)}
 
