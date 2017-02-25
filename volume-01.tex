@@ -11015,8 +11015,7 @@ z_{tt}-\frac{\partial}{\partial x}(a_{1}(x,t)z_{x}+a_2(x,t)z)=g(x,t,z(x,t),\nabl
 
 Дадим следующее
 \begin{Definition}
-Функцию $z$ назовём решением задачи (\ref{semilinear:problem:Dirichlet2[n=1]}), принадлежащим энергетическому классу первого рода
-$\textrm{Э}^{1}_{2,0}(Q_T)$, если $z$ является элементом $\textrm{Э}^{1}_{2,0}(Q_T)$ и удовлетворяет ин\-тег\-раль\-но\-му тождеству
+Функцию $z$ назовём решением задачи (\ref{semilinear:problem:Dirichlet2[n=1]}), принадлежащим классу $\textrm{Є}^{1}_{2,0}(Q_T)$, если $z$ является элементом $\textrm{Є}^{1}_{2,0}(Q_T)$ и удовлетворяет ин\-тег\-раль\-но\-му тождеству
 \begin{gather}\label{semilinear:problem:Dirichlet2[n=1]:integral_identity}
 \int\limits_{Q_T}[-z_t\eta_t+a_{1}z_{x}\eta_{x}+a_2z\eta_{x}]dxdt=\int\limits_{Q_T}g(x,t,z,\nabla_xz,z_t)\eta dxdt+\int\limits_\Omega\psi(x)\eta(x,0)dx\,\,\,\forall\,
 \eta\in\hat{\textrm{Э}}{}^{1}_{2,0}(Q_T);\\
@@ -11026,15 +11025,37 @@ $\textrm{Э}^{1}_{2,0}(Q_T)$, если $z$ является элементом $
 
 Покажем, что имеет место
 \begin{Theorem}\label{unique_existence_theorem:semilinear:problem:Dirichlet2[n=1]}
-Задача (\ref{semilinear:problem:Dirichlet2[n=1]}) имеет единственное решение $z$, принадлежащее энергетическому классу первого рода,
-причём найдётся константа $B_2>0$, определяемая лишь числами $T$, $\nu_1$, $\nu_2$, $\nu_3>0$, функцией $k\in L_1[0,T]$ и областью $\Omega$, такая, что
+Задача (\ref{semilinear:problem:Dirichlet2[n=1]}) имеет единственное решение $z\in\textrm{Є}^{1}_{2,0}(Q_T)$, причём найдётся константа $B_1>0$, определяемая лишь числами $T$, $\nu_1$, $\nu_2$, $\nu_3>0$, функцией $k\in L_1[0,T]$ и длиной интервала $\Omega$, такая, что
 \begin{gather}\label{sec:semilinear:problem:Dirichlet2[n=1]:a_priori_solution_estimate}
-\|z\|_{\textrm{Э}^{1}_{2}(Q_T)}\leqslant B_2[\|\varphi\|^{(1)}_{2,\Omega}+\|\psi\|_{2,\Omega}+\|a(\cdot,\cdot,0)\|_{2,1,Q_T}].
+\|z\|_{\textrm{Є}^{1}_{2}(Q_T)}\leqslant B_2[\|\varphi\|^{(1)}_{2,\Omega}+\|\psi\|_{2,\Omega}+\|g(\cdot,\cdot,0,0,0)\|_{2,1,Q_T}].
 \end{gather}
 \end{Theorem}
 \begin{Proof}
+Доказательство проведём в два этапа: сначала сведём начально--краевую задачу (\ref{semilinear:problem:Dirichlet2[n=1]}) к абстрактной задаче Коши, а затем применим результат о существовании и единственности решения абстрактной задачи.
+
+1) Сведём начально--краевую задачу  (\ref{semilinear:problem:Dirichlet2[n=1]}) к абстрактной задаче Коши. 
+
+Для этого, прежде всего, положим $V\equiv\stackrel{\circ}{W}{\!\!}^1_2(\Omega)$, $H\equiv L_2(\Omega)$, наделив множества $V$ и $H$ стандартными скалярными произведениями, и введём функции $\mathfrak{A}:[0,T]\to \mathcal{L}(V,V^*)$, $\mathfrak{B}:[0,T]\to \mathcal{L}(H,V^*)$ равенствами
+\begin{gather*}
+\langle\mathfrak{A}(t)v,w\rangle\equiv\int\limits_\Omega a_1(x,t)v'(x)w'(x)dx,\,\,\,\langle\mathfrak{B}(t)h,v\rangle\equiv\int\limits_\Omega a_2(x,t)h(x)v'(x)dx,\,\,\,\forall\,v,\,w\in V\,\,\forall\,h\in H.
+\end{gather*}
+Далее, введём пространство $Z\equiv\mathbb{R}^2$, со стандартным скалярным произведением, представляющее собой множество $\{(v(l_1),v(l_2)):v\in W^1_2(\Omega)\}$, и оператор $\mathfrak{G}:V\to Z$ как оператор, ставящий каждому элементу $v\in V$ пару следов $(v(l_1),v(l_2))$. Определим функцию $\mathfrak{F}:[0,T]\to \mathcal{L}(Z,Z)$ как функцию, тождественно равную нулю. Положим $Y\equiv Z$, $\mathfrak{C}\equiv\mathfrak{G}$.
+
+Кроме того, введём функцию $\mathfrak{b}:[0,T]\times V\times H\to H$ равенством 
+\begin{gather*}
+\mathfrak{b}(t,v,h)(x)\equiv g(x,t,v(x),v'(x),h(x)),\,\,\,\forall\,v\in V,\,h\in H\,\forall\,t\in[0,T],\,x\in\Omega.
+\end{gather*}
+Наконец, функцию $\mathfrak{g}:[0,T]\to Y^*$ определим как тождественно равную нулю.
+
+Рассмотрим теперь задачу Коши
+\begin{gather}\label{abstrChauchyprobeq:nonaut:nonlinear!from.Dirichlet[n=1]}
+\ddot{\mathfrak{z}}(t)+\mathfrak{A}(t){\mathfrak{z}}(t)+\mathfrak{B}(t){\mathfrak{z}}(t) + \mathfrak{G}^*\mathfrak{F}(t)\mathfrak{G}{\mathfrak{z}}(t) = \mathfrak{b}(t,\mathfrak{z}(t),\dot{\mathfrak{z}}(t)) + \mathfrak{C}^*\mathfrak{g}(t),\,\,\,t\in[0,T],\\
+\label{abstrChauchyprobinitcond:nonaut:nonlinear!from.Dirichlet[n=1]}
+{\mathfrak{z}}(0)=\varphi,\,\,\,\dot{\mathfrak{z}}(0)=\psi,
+\end{gather}
 
 \end{Proof}
+
 
 
     \chapter{Уравнения с главной частью второго порядка ($n>1$)}
